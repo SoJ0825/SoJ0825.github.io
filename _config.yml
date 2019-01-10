@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
-keywords:
-author: John Doe
-language:
-timezone:
+title: SoJ's blog
+subtitle: SoJ 的學習筆記
+description: 一個轉職軟體工程師的新手筆記
+keywords: PHP Laravel
+author: SoJ
+language: zh-tw
+timezone: Asia/Taipei
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://soj.blog
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -43,6 +43,7 @@ highlight:
   line_number: true
   auto_detect: false
   tab_replace:
+  first_line_number: 'inline' # | 'always1'
   
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -73,7 +74,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: miho
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -115,9 +116,28 @@ markdown:
     - markdown-it-sub
     - markdown-it-sup
     - markdown-it-checkbox
-anchors:
-  level: 1 # Minimum level for ID creation. (Ex. h2 to h6)
-  collisionSuffix: 'v' # A suffix that is prepended to the number given if the ID is repeated.
-  permalink: true # If true, creates an anchor tag with a permalink besides the heading.
-  permalinkClass: header-anchor # Class used for the permalink anchor tag.
-  permalinkSymbol: '' # The symbol used to make the permalink.
+  anchors:
+    level: 1 # Minimum level for ID creation. (Ex. h2 to h6)
+    collisionSuffix: 'v' # A suffix that is prepended to the number given if the ID is repeated.
+    permalink: true # If true, creates an anchor tag with a permalink besides the heading.
+    permalinkClass: header-anchor # Class used for the permalink anchor tag.
+    permalinkSymbol: '' # The symbol used to make the permalink.
+
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: true
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: false
+    tags: false
