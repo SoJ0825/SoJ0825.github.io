@@ -79,7 +79,10 @@ theme: miho
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: https://github.com/SoJ0825/blog.git
+  branch: master
+  message: "{{ now('YYYY-MM-DD HH:mm:ss') }}"
 
 # Markdown-it config
 ## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki
