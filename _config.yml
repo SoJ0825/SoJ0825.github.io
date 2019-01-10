@@ -80,7 +80,7 @@ theme: miho
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/SoJ0825/blog.git
+  repo: git@github.com:SoJ0825/SoJ0825.github.io.git
   branch: master
   message: "{{ now('YYYY-MM-DD HH:mm:ss') }}"
 
