@@ -1,7 +1,13 @@
 ---
-title: HackMD-test
-date: 2019-01-10 11:15:43
+title: 測試 hackmd 語法
+date: 2019-01-10
+categories: 
+    - test HackMD
+author: SoJ
 tags:
+    - HackMD
+    - Hexo
+cover_picture: images/HackMD.svg
 ---
 
 功能介紹
