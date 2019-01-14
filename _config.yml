@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: SoJ's blog
-subtitle: SoJ 的學習筆記
-description: 一個轉職軟體工程師的新手筆記
-keywords: PHP Laravel
+title: SoJ 的學習筆記
+subtitle:
+description:
+keywords: Laravel, MySQL, PHP, SoJ, SoJ's Blog, SoJ 的學習筆記
 author: SoJ
 language: zh-tw
 timezone: Asia/Taipei
