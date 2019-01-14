@@ -2,7 +2,7 @@
 title: 測試 hackmd 語法
 date: 2019-01-10
 categories: 
-    - test HackMD
+    - test-HackMD
 author: SoJ
 tags:
     - HackMD
