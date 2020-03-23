@@ -1,5 +1,5 @@
 ---
-title: 好想工作室第 6 梯 Backend Camp 招生
+title: 好想工作室 Backend Camp 第 6 梯招生(已截止)
 date: 2020-02-20 22:55:00
 categories: 
 - 招生
