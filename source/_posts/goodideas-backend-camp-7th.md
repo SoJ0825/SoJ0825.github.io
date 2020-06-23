@@ -1,5 +1,5 @@
 ---
-title: 好想工作室 Backend Camp 第 7 梯招生
+title: 好想工作室 Backend Camp 第 7 梯招生(已截止)
 date: 2020-06-02 10:48:43
 categories: 
 - 招生
