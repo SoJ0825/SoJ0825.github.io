@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>讓 Hexo 支援 markdown 語法 | SoJ 的學習筆記</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Laravel, MySQL, PHP, SoJ, SoJ's Blog, SoJ 的學習筆記">
+  
+  <meta name="description" content="Hexo 設置 首先我要先謝謝 好想工作室 的前輩 Chris大大，本文大部分都是參考他的文章，大家可以去逛逛他的筆記，很多技術相關的文章可以參考。  Chris 筆記 - Hexo 研究筆記 1  預先安裝  NodeJS =&amp;gt; 會順便安裝 npm 套件管理系統  brew install node  Hexo 主程式 =&amp;gt; 透過 npm 安裝  npm install hexo-c">
+<meta name="keywords" content="Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="讓 Hexo 支援 markdown 語法">
+<meta property="og:url" content="/2019/01/14/Hexo-Setting/index.html">
+<meta property="og:site_name" content="SoJ 的學習筆記">
+<meta property="og:description" content="Hexo 設置 首先我要先謝謝 好想工作室 的前輩 Chris大大，本文大部分都是參考他的文章，大家可以去逛逛他的筆記，很多技術相關的文章可以參考。  Chris 筆記 - Hexo 研究筆記 1  預先安裝  NodeJS =&amp;gt; 會順便安裝 npm 套件管理系統  brew install node  Hexo 主程式 =&amp;gt; 透過 npm 安裝  npm install hexo-c">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://i.imgur.com/oOI71pQ.png">
+<meta property="og:updated_time" content="2021-04-09T09:59:35.318Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="讓 Hexo 支援 markdown 語法">
+<meta name="twitter:description" content="Hexo 設置 首先我要先謝謝 好想工作室 的前輩 Chris大大，本文大部分都是參考他的文章，大家可以去逛逛他的筆記，很多技術相關的文章可以參考。  Chris 筆記 - Hexo 研究筆記 1  預先安裝  NodeJS =&amp;gt; 會順便安裝 npm 套件管理系統  brew install node  Hexo 主程式 =&amp;gt; 透過 npm 安裝  npm install hexo-c">
+<meta name="twitter:image" content="https://i.imgur.com/oOI71pQ.png">
+  
+  
+    <link rel="icon" href="/images/favicon.png">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-194251244-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title"></span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        SoJ 的學習筆記
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        半導體工程師轉職軟體工程師的新手筆記
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="SoJ" href="//soj0825.github.io/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/SoJ0825">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Facebook" target="_blank" href="//www.facebook.com/songjyun.gao">
+                            <i class="fa fa-facebook fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-Hexo-Setting" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      讓 Hexo 支援 markdown 語法
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/Hexo/">Hexo</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-01-14
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h1 id="hexo-設置"><a class="header-anchor" href="#hexo-設置"></a>Hexo 設置</h1>
+<p>首先我要先謝謝 <a href="http://goodideas-studio.com/" target="_blank" rel="noopener">好想工作室</a> 的前輩 <a href="https://dwatow.github.io/" target="_blank" rel="noopener">Chris大大</a>，本文大部分都是參考他的文章，大家可以去逛逛他的筆記，很多技術相關的文章可以參考。</p>
+<blockquote>
+<p><a href="https://dwatow.github.io/2017/06-18-hexo/re-equip-hexo1/" target="_blank" rel="noopener">Chris 筆記 - Hexo 研究筆記 1</a></p>
+</blockquote>
+<h2 id="預先安裝"><a class="header-anchor" href="#預先安裝"></a>預先安裝</h2>
+<ol>
+<li>NodeJS =&gt; 會順便安裝 npm 套件管理系統</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>Hexo 主程式 =&gt; 透過 npm 安裝</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>建立一個新資料夾並安裝 hexo 基礎框架</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>進入資料夾 <code>cd blog</code>，安裝相關套件</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>啟動本機 server(本機先查看結果)</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<h2 id="支援-markdown-語法"><a class="header-anchor" href="#支援-markdown-語法"></a>支援 markdown 語法</h2>
+<p>讓 Hexo 支援 markdown 語法，有一個最大好處，就是因為 <a href="https://hackmd.io/" target="_blank" rel="noopener">HackMD</a> 本身也是支援 markdown 語法，這樣在 HackMD 上的筆記，也可以快速轉換成我們部落格的貼文。</p>
+<p>以下請參考 Chris 筆記</p>
+<ol>
+<li>刪除原始渲染器</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>安裝套件 hexo-renderer-markdown-it</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install git+https://github.com/hexojs/hexo-renderer-markdown-it.git --save</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>安裝渲染器外掛(下面共11個)</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install markdown-it-abbr markdown-it-container markdown-it-deflist markdown-it-emoji markdown-it-footnote markdown-it-imsize markdown-it-ins markdown-it-mark markdown-it-regexp markdown-it-sub markdown-it-sup --save</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>HackMD 不用裝但 Hexo 要裝的套件</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install markdown-it-checkbox --save</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>配置 Hexo 設定檔</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Markdown-it config</span><br><span class="line">## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki</span><br><span class="line">markdown:</span><br><span class="line">  render:</span><br><span class="line">    html: true # Doesn&apos;t escape HTML content so the tags will appear as html.</span><br><span class="line">    # xhtmlOut: false # Parser will not produce XHTML compliant code.</span><br><span class="line">    breaks: true # Parser produces `&lt;br&gt;` tags every time there is a line break in the source document.</span><br><span class="line">    langPrefix: &apos;&apos;</span><br><span class="line">    linkify: true # Returns text links as text.</span><br><span class="line">    typographer: true # Substitution of common typographical elements will take place.</span><br><span class="line">    quotes: &apos;“”‘’&apos; # &quot;double&quot; will be turned into “single”</span><br><span class="line">    # &apos;single&apos; will be turned into ‘single’</span><br><span class="line">  plugins:</span><br><span class="line">    - markdown-it-abbr</span><br><span class="line">    - name: markdown-it-container</span><br><span class="line">      options: success</span><br><span class="line">    - name: markdown-it-container</span><br><span class="line">      options: info</span><br><span class="line">    - name: markdown-it-container</span><br><span class="line">      options: warning</span><br><span class="line">    - name: markdown-it-container</span><br><span class="line">      options: danger</span><br><span class="line">    - markdown-it-deflist</span><br><span class="line">    - name: markdown-it-emoji</span><br><span class="line">      options:</span><br><span class="line">        shortcuts: &#123;&#125;</span><br><span class="line">    - markdown-it-footnote</span><br><span class="line">    - markdown-it-imsize</span><br><span class="line">    - markdown-it-ins</span><br><span class="line">    - markdown-it-katex</span><br><span class="line">    - markdown-it-mark</span><br><span class="line">    - markdown-it-regexp</span><br><span class="line">    - markdown-it-sub</span><br><span class="line">    - markdown-it-sup</span><br><span class="line">    - markdown-it-checkbox</span><br><span class="line">  anchors:</span><br><span class="line">    level: 1 # Minimum level for ID creation. (Ex. h2 to h6)</span><br><span class="line">    collisionSuffix: &apos;v&apos; # A suffix that is prepended to the number given if the ID is repeated.</span><br><span class="line">    permalink: true # If true, creates an anchor tag with a permalink besides the heading.</span><br><span class="line">    permalinkClass: header-anchor # Class used for the permalink anchor tag.</span><br><span class="line">    permalinkSymbol: &apos;&apos; # The symbol used to make the permalink.</span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>安裝過濾器
+<ul>
+<li>支援 流程圖</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-filter-flowchart --save</span><br></pre></td></tr></table></figure>
+<ul>
+<li>UML 循序圖</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-filter-sequence --save</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="數學表達式"><a class="header-anchor" href="#數學表達式"></a>數學表達式</h2>
+<blockquote>
+<p><a href="https://dwatow.github.io/2018/01-28-hexo/katex/" target="_blank" rel="noopener">Chris 筆記 - hexo加上數學式 MathJax</a></p>
+</blockquote>
+<ol>
+<li>安裝套件</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install markdown-it-katex --save</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>配置 hexo 設定檔</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">markdown:</span><br><span class="line">  plugins:</span><br><span class="line">    - markdown-it-katex</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>加入 CSS<br>
+<code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css&quot;&gt;</code></li>
+</ol>
+<p>其中 CSS 要加在 <code>themes&gt;&gt;layout&gt;&gt;_partial&gt;&gt;head.ejs</code> 的檔案裡，只要加在 <code>&lt;head&gt;</code> <code>&lt;/head&gt;</code> 之間任意位置就可以</p>
+<hr>
+<h2 id="額外安裝"><a class="header-anchor" href="#額外安裝"></a>額外安裝</h2>
+<blockquote>
+<p><a href="https://www.npmjs.com/package/hexo-pdf" target="_blank" rel="noopener">hexo-pdf 安裝說明</a></p>
+</blockquote>
+<p>hexo-pdf =&gt; 可支援 pdf 和 slideShare(簡報)</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install --save hexo-pdf</span><br></pre></td></tr></table></figure>
+<h3 id="useage"><a class="header-anchor" href="#useage"></a>Useage</h3>
+<p>Normal PDF</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% pdf http://7xov2f.com1.z0.glb.clouddn.com/bash_freshman.pdf %&#125;</span><br></pre></td></tr></table></figure>
+<p>or</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% pdf ./bash_freshman.pdf %&#125;</span><br></pre></td></tr></table></figure>
+<p>Google drive</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% pdf https://drive.google.com/file/d/0B6qSwdwPxPRdTEliX0dhQ2JfUEU/preview %&#125;</span><br></pre></td></tr></table></figure>
+<p>Slideshare</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% pdf http://www.slideshare.net/slideshow/embed_code/key/8Jl0hUt2OKUOOE %&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="指定程式碼開始行號"><a class="header-anchor" href="#指定程式碼開始行號"></a>指定程式碼開始行號</h2>
+<p>範例如下<br>
+<img src="https://i.imgur.com/oOI71pQ.png" alt=""></p>
+<p>配置 hexo 的 <code>_config.yml</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">highlight:</span><br><span class="line">  first_line_number: &apos;inline&apos; # | &apos;always1&apos;</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="css-相關"><a class="header-anchor" href="#css-相關"></a>CSS 相關</h1>
+<h2 id="hackmd-中的特殊圖示"><a class="header-anchor" href="#hackmd-中的特殊圖示"></a>Hackmd 中的特殊圖示</h2>
+<h3 id="範例"><a class="header-anchor" href="#範例"></a>範例</h3>
+<p><strong>電腦 &amp; 平板</strong></p>
+<p><i class="fa fa-edit fa-fw"></i> 編輯：只看到編輯器<br>
+<i class="fa fa-eye fa-fw"></i> 檢視：只看到結果<br>
+<i class="fa fa-columns fa-fw"></i> 同時：同時看到兩邊</p>
+<p><strong>手機</strong></p>
+<p><i class="fa fa-toggle-on fa-fw"></i> 檢視：只看到結果<br>
+<i class="fa fa-toggle-off fa-fw"></i> 編輯：只看到編輯器</p>
+<h3 id="做法"><a class="header-anchor" href="#做法"></a>做法</h3>
+<p>要顯示上面的特殊圖示要在 <code>themes&gt;&gt;layout&gt;&gt;_partial&gt;&gt;head.ejs</code> 的檔案裡，<code>&lt;head&gt;</code> <code>&lt;/head&gt;</code> 之間任意位置加入下方 CSS 條件<br>
+<code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css&quot;&gt;</code></p>
+<h2 id="警告區塊"><a class="header-anchor" href="#警告區塊"></a>警告區塊</h2>
+<ul>
+<li>範例</li>
+</ul>
+<div class="success">
+<p>耶 🎉</p>
+</div>
+<div class="info">
+<p>這是訊息 📣</p>
+</div>
+<div class="warning">
+<p>注意 ⚡️</p>
+</div>
+<div class="danger">
+<p>喔不 🔥</p>
+</div>
+<p>在主題的 <code>source&gt;&gt;style.css</code> 或者 <code>source&gt;&gt;style.less</code> 或者 <code>source&gt;&gt;style.styl</code><br>
+(每個主題的 css 存放路徑或檔名可能不太一樣，要找一下，通常檔名都是 style)</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.success, .info, .warning, .danger &#123;</span><br><span class="line">  padding: 15px;</span><br><span class="line">  margin-bottom: 20px;</span><br><span class="line">  border: 1px solid transparent;</span><br><span class="line">  border-radius: 4px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.success &#123;</span><br><span class="line">  color: #3c763d;</span><br><span class="line">  background-color: #dff0d8;</span><br><span class="line">  border-color: #d6e9c6;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.info &#123;</span><br><span class="line">  color: #31708f;</span><br><span class="line">  background-color: #d9edf7;</span><br><span class="line">  border-color: #bce8f1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.warning &#123;</span><br><span class="line">  color: #8a6d3b;</span><br><span class="line">  background-color: #fcf8e3;</span><br><span class="line">  border-color: #faebcc;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.danger &#123;</span><br><span class="line">  color: #a94442;</span><br><span class="line">  background-color: #f2dede;</span><br><span class="line">  border-color: #ebccd1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="佈署到-github"><a class="header-anchor" href="#佈署到-github"></a>佈署到 github</h3>
+<ol>
+<li>安裝佈署套件</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>配置 hexo 設定檔</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: &lt;repository url&gt;</span><br><span class="line">  branch: [branch]</span><br><span class="line">  message: [message]</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>上傳 github</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo deploy -g</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="安裝套件"><a class="header-anchor" href="#安裝套件"></a>安裝套件</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;dependencies&quot;: &#123;</span><br><span class="line">  &quot;hexo&quot;: &quot;^3.7.0&quot;,</span><br><span class="line">  &quot;hexo-autoprefixer&quot;: &quot;^2.0.0&quot;,</span><br><span class="line">  &quot;hexo-deployer-git&quot;: &quot;^0.3.1&quot;,</span><br><span class="line">  &quot;hexo-filter-flowchart&quot;: &quot;^1.0.4&quot;,</span><br><span class="line">  &quot;hexo-filter-sequence&quot;: &quot;^1.0.3&quot;,</span><br><span class="line">  &quot;hexo-generator-archive&quot;: &quot;^0.1.5&quot;,</span><br><span class="line">  &quot;hexo-generator-category&quot;: &quot;^0.1.3&quot;,</span><br><span class="line">  &quot;hexo-generator-feed&quot;: &quot;^1.2.2&quot;,</span><br><span class="line">  &quot;hexo-generator-index&quot;: &quot;^0.2.1&quot;,</span><br><span class="line">  &quot;hexo-generator-json-content&quot;: &quot;^3.0.1&quot;,</span><br><span class="line">  &quot;hexo-generator-search&quot;: &quot;^2.4.0&quot;,</span><br><span class="line">  &quot;hexo-generator-tag&quot;: &quot;^0.2.0&quot;,</span><br><span class="line">  &quot;hexo-helper-qrcode&quot;: &quot;^1.0.2&quot;,</span><br><span class="line">  &quot;hexo-pdf&quot;: &quot;^1.1.1&quot;,</span><br><span class="line">  &quot;hexo-recommended-posts&quot;: &quot;^1.0.3&quot;,</span><br><span class="line">  &quot;hexo-renderer-ejs&quot;: &quot;^0.3.1&quot;,</span><br><span class="line">  &quot;hexo-renderer-less&quot;: &quot;^1.0.0&quot;,</span><br><span class="line">  &quot;hexo-renderer-markdown-it&quot;: &quot;git+https://github.com/hexojs/hexo-renderer-markdown-it.git&quot;,</span><br><span class="line">  &quot;hexo-renderer-stylus&quot;: &quot;^0.3.3&quot;,</span><br><span class="line">  &quot;hexo-server&quot;: &quot;^0.3.1&quot;,</span><br><span class="line">  &quot;markdown-it-abbr&quot;: &quot;^1.0.4&quot;,</span><br><span class="line">  &quot;markdown-it-checkbox&quot;: &quot;^1.1.0&quot;,</span><br><span class="line">  &quot;markdown-it-container&quot;: &quot;^2.0.0&quot;,</span><br><span class="line">  &quot;markdown-it-deflist&quot;: &quot;^2.0.3&quot;,</span><br><span class="line">  &quot;markdown-it-emoji&quot;: &quot;^1.4.0&quot;,</span><br><span class="line">  &quot;markdown-it-footnote&quot;: &quot;^3.0.1&quot;,</span><br><span class="line">  &quot;markdown-it-imsize&quot;: &quot;^2.0.1&quot;,</span><br><span class="line">  &quot;markdown-it-ins&quot;: &quot;^2.0.0&quot;,</span><br><span class="line">  &quot;markdown-it-katex&quot;: &quot;^2.0.3&quot;,</span><br><span class="line">  &quot;markdown-it-mark&quot;: &quot;^2.0.0&quot;,</span><br><span class="line">  &quot;markdown-it-regexp&quot;: &quot;^0.4.0&quot;,</span><br><span class="line">  &quot;markdown-it-sub&quot;: &quot;^1.0.0&quot;,</span><br><span class="line">  &quot;markdown-it-sup&quot;: &quot;^1.0.0&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最後更新： 2021年04月09日 17:59</p>
+        <p>原始連結： <a class="post-url" href="/2019/01/14/Hexo-Setting/" title="讓 Hexo 支援 markdown 語法">/2019/01/14/Hexo-Setting/</a></p>
+        <footer>
+            <a href="">
+                <img src="/images/logo.png" alt="SoJ">
+                SoJ
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=/2019/01/14/Hexo-Setting/&title=《讓 Hexo 支援 markdown 語法》 — SoJ 的學習筆記&pic=images/markdown.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=/2019/01/14/Hexo-Setting/&title=《讓 Hexo 支援 markdown 語法》 — SoJ 的學習筆記&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=/2019/01/14/Hexo-Setting/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《讓 Hexo 支援 markdown 語法》 — SoJ 的學習筆記&url=/2019/01/14/Hexo-Setting/&via=" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=/2019/01/14/Hexo-Setting/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=/2019/01/14/Hexo-Setting/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/Hexo/" class="color5">Hexo</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#hexo-設置"><span class="post-toc-text">Hexo 設置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#預先安裝"><span class="post-toc-text">預先安裝</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#支援-markdown-語法"><span class="post-toc-text">支援 markdown 語法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#數學表達式"><span class="post-toc-text">數學表達式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#額外安裝"><span class="post-toc-text">額外安裝</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#useage"><span class="post-toc-text">Useage</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#指定程式碼開始行號"><span class="post-toc-text">指定程式碼開始行號</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#css-相關"><span class="post-toc-text">CSS 相關</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#hackmd-中的特殊圖示"><span class="post-toc-text">Hackmd 中的特殊圖示</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#範例"><span class="post-toc-text">範例</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#做法"><span class="post-toc-text">做法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#警告區塊"><span class="post-toc-text">警告區塊</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#佈署到-github"><span class="post-toc-text">佈署到 github</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安裝套件"><span class="post-toc-text">安裝套件</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2020/02/20/goodideas-6th-backend-camps/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          好想工作室 Backend Camp 第 6 梯招生(已截止)
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2019/01/14/HackMD-test/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">測試 hackmd 功能</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        總訪客數：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        總訪問量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2021 SoJ<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 0
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/Hexo/">Hexo</a><a class="category-link" href="/categories/招生/">招生</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/好想工作室/" style="font-size: 20px;">好想工作室</a> <a href="/tags/招募/" style="font-size: 20px;">招募</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/好想工作室/" style="font-size: 20px;">好想工作室</a> <a href="/tags/招募/" style="font-size: 20px;">招募</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>

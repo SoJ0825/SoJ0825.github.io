@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>好想工作室 Backend Camp 第 6 梯招生(已截止) | SoJ 的學習筆記</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Laravel, MySQL, PHP, SoJ, SoJ's Blog, SoJ 的學習筆記">
+  
+  <meta name="description" content="大家好 我是好想工作室的 Backend Camp Mentor - 高菘駿 相信大家最近從新聞裡聽到「口罩地圖」、「工程師鍵盤救國」、「3天讓大家用健保卡記名買口罩」…。 我很驕傲的說這個「口罩地圖」的製作人就是好想工作室的創辦人 Howard，身為工作室一員的我也深感榮耀。  ETtoday新聞雲 報導  我們身處在一個網路發達、人手一機的資訊大爆炸年代，軟體工程師確實可以靠鍵盤救國了。 但可">
+<meta name="keywords" content="好想工作室,招募">
+<meta property="og:type" content="article">
+<meta property="og:title" content="好想工作室 Backend Camp 第 6 梯招生(已截止)">
+<meta property="og:url" content="/2020/02/20/goodideas-6th-backend-camps/index.html">
+<meta property="og:site_name" content="SoJ 的學習筆記">
+<meta property="og:description" content="大家好 我是好想工作室的 Backend Camp Mentor - 高菘駿 相信大家最近從新聞裡聽到「口罩地圖」、「工程師鍵盤救國」、「3天讓大家用健保卡記名買口罩」…。 我很驕傲的說這個「口罩地圖」的製作人就是好想工作室的創辦人 Howard，身為工作室一員的我也深感榮耀。  ETtoday新聞雲 報導  我們身處在一個網路發達、人手一機的資訊大爆炸年代，軟體工程師確實可以靠鍵盤救國了。 但可">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:updated_time" content="2021-04-09T09:59:35.318Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="好想工作室 Backend Camp 第 6 梯招生(已截止)">
+<meta name="twitter:description" content="大家好 我是好想工作室的 Backend Camp Mentor - 高菘駿 相信大家最近從新聞裡聽到「口罩地圖」、「工程師鍵盤救國」、「3天讓大家用健保卡記名買口罩」…。 我很驕傲的說這個「口罩地圖」的製作人就是好想工作室的創辦人 Howard，身為工作室一員的我也深感榮耀。  ETtoday新聞雲 報導  我們身處在一個網路發達、人手一機的資訊大爆炸年代，軟體工程師確實可以靠鍵盤救國了。 但可">
+  
+  
+    <link rel="icon" href="/images/favicon.png">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-194251244-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title"></span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        SoJ 的學習筆記
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        半導體工程師轉職軟體工程師的新手筆記
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="SoJ" href="//soj0825.github.io/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/SoJ0825">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Facebook" target="_blank" href="//www.facebook.com/songjyun.gao">
+                            <i class="fa fa-facebook fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-goodideas-6th-backend-camps" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      好想工作室 Backend Camp 第 6 梯招生(已截止)
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/招生/">招生</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2020-02-20
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <p>大家好<br>
+我是好想工作室的 Backend Camp Mentor - 高菘駿</p>
+<p>相信大家最近從新聞裡聽到「口罩地圖」、「工程師鍵盤救國」、「3天讓大家用健保卡記名買口罩」…。<br>
+我很驕傲的說這個「口罩地圖」的製作人就是好想工作室的創辦人 Howard，身為工作室一員的我也深感榮耀。</p>
+<blockquote>
+<p><a href="https://www.ettoday.net/news/20200204/1638039.htm" target="_blank" rel="noopener">ETtoday新聞雲 報導</a></p>
+</blockquote>
+<p>我們身處在一個網路發達、人手一機的資訊大爆炸年代，軟體工程師確實可以靠鍵盤救國了。<br>
+但可惜的是南部一直都是資訊業的沙漠地帶，台南更是缺乏社群資源，所以好想工作室願意提供場地、環境來培訓工程師，讓更多的人凝聚到台南來。</p>
+<h3 id="目標-產出好的工程師"><a class="header-anchor" href="#目標-產出好的工程師"></a>目標 <strong>產出好的工程師</strong></h3>
+<p>想成為一個工程師，除了複製、貼上的碼農，也要有一定的解 bug 能力<br>
+而「好的」工程師，除了技術能力，還有下列不可或缺的重要部分：</p>
+<ol>
+<li>學習力：在這個資訊爆發的年代裡，程式語言也是推陳出新，技術也是不斷增進。如果你不能在這個洪流裡<strong>自主</strong>學習，遲早會被淘汰。</li>
+<li>協作力：如果你以為寫程式只要面對電腦，那就大錯特錯了！這裡更多的是人與人的溝通、交流，一個專案往往不是一個人就可以完成的，也因為如此，溝通能力、表達能力、負責態度，都決定你是不是一個好的工程師。</li>
+<li>交流：我們鼓勵學員勇敢上台分享自己所學也可以共享自己的開發成果，藉此獲得反饋、共同成長。上台講不好也沒關係，台語有句話「互相落氣，求進步」。</li>
+</ol>
+<blockquote>
+<p><a href="https://twblg.dict.edu.tw/holodict_new/result_detail.jsp?n_no=60093&amp;curpage=1&amp;sample=1&amp;radiobutton=1&amp;querytarget=1&amp;limit=1&amp;pagenum=1&amp;rowcount=1" target="_blank" rel="noopener">互相落氣，求進步 - 教育部閩南語辭典</a></p>
+</blockquote>
+<h3 id="好想工作室-backend-camp-主要學習方向"><a class="header-anchor" href="#好想工作室-backend-camp-主要學習方向"></a><strong>好想工作室 Backend Camp 主要學習方向</strong></h3>
+<p>系統：Linux<br>
+語言：PHP<br>
+框架：Laravel<br>
+資料庫：關聯式資料庫 MySQL<br>
+雲端服務：AWS or GCP</p>
+<h3 id="報名前先問問自己"><a class="header-anchor" href="#報名前先問問自己"></a><strong>報名前先問問自己…</strong></h3>
+<ol>
+<li>嘗試描述「在家自學」與「在好想自學」會有什麼差異？</li>
+<li>對於「與人交流」和「上台分享」的看法？</li>
+<li>是否不排斥閱讀任何類型的學習資源？ (例如: 官方文件、英文教學影片等)</li>
+<li>為什麼選擇後端工程師？</li>
+<li>是否只是因為免費而來試試呢？</li>
+</ol>
+<h3 id="常見問答"><a class="header-anchor" href="#常見問答"></a><strong>常見問答</strong></h3>
+<p><strong>Q：參加培訓需要學費或額外費用嗎？</strong><br>
+台南好想工作室招收第 6 梯 Backend Camp 皆是半年免費。</p>
+<p><strong>Q：培訓過程主要為自我學習研究？</strong><br>
+是的。我們沒有老師上課也不會提供課綱。</p>
+<p><strong>Q：有可能彈性調整學習時間？ 晚一點來或固定請假？</strong><br>
+學習效率該如何提升，包含固定生活作息以及每週持續性，皆為學習的一部分。彈性調整，可以視情況晚點來/晚點走。固定請假，需要看個人的情況，因每個人而定。</p>
+<p><strong>Q：因白天工作，有可能晚上或遠端培訓嗎？</strong><br>
+時間！是好想希望學員付出的唯一要求，如果無法付出時間來好想，可以先嘗試上線上課程。</p>
+<p><strong>Q：非相關背景，需每天兩地通勤，已成立家庭是否還合適 Training？</strong><br>
+每個人皆有不同的現實考量，但沒有人能因為這些條件決定你是否適合 training，只有自己能選擇未來要如何前行。這些問題是你的顧慮，與好想考慮學員的條件無關。</p>
+<p><strong>Q：培訓過程感到虛耗時間？</strong><br>
+「時間」是來好想工作室唯一付出的，也是需要自己掌握的學習資源。學習過程感到沒有重心，或在摸索方向，可以與伙伴、mentor以及任何你想討論的人聊聊。不管在不在好想 training，一旦有了方向，請全力以赴，不要想省掉任何該努力的時間，否則還是會有虛秏時間的感覺。</p>
+<p><strong>Q：招募需通過篩選機制？</strong><br>
+對，因為好想工作室的資源有限，希望把資源給需要而適合的人。</p>
+<p><strong>Q：好想主要培訓目的為何？</strong><br>
+讓你成為好的工程師，也讓你能夠成為好的工程師的好伙伴。</p>
+<h3 id="培訓費用"><a class="header-anchor" href="#培訓費用"></a>培訓費用</h3>
+<p>完全免費</p>
+<h3 id="培訓期間"><a class="header-anchor" href="#培訓期間"></a>培訓期間</h3>
+<p>需滿六個月</p>
+<h3 id="招生條件"><a class="header-anchor" href="#招生條件"></a>招生條件</h3>
+<p><strong>乙台筆電，作業系統 Linux / Mac。</strong><br>
+<strong>每週一至五，每天早上 9 點到下午 6 點</strong></p>
+<h3 id="報名方式"><a class="header-anchor" href="#報名方式"></a>報名方式</h3>
+<p>寄件信箱：sojphp@gmail.com<br>
+報名期限：即日起至額滿為止<br>
+撰寫主旨：「好想工作室 Backend Camp 申請」<br>
+內容格式：</p>
+<ol>
+<li>自我簡介 (過去學 / 經歷等)。</li>
+<li>是否試過自學？ 有遇到什麼困難嗎？</li>
+<li>為什麼想來好想工作室？</li>
+<li>獲得消息來源（朋友介紹、Facebook 或 PTT 等）。</li>
+</ol>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最後更新： 2021年04月09日 17:59</p>
+        <p>原始連結： <a class="post-url" href="/2020/02/20/goodideas-6th-backend-camps/" title="好想工作室 Backend Camp 第 6 梯招生(已截止)">/2020/02/20/goodideas-6th-backend-camps/</a></p>
+        <footer>
+            <a href="">
+                <img src="/images/logo.png" alt="SoJ">
+                SoJ
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=/2020/02/20/goodideas-6th-backend-camps/&title=《好想工作室 Backend Camp 第 6 梯招生(已截止)》 — SoJ 的學習筆記&pic=images/goodideas.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=/2020/02/20/goodideas-6th-backend-camps/&title=《好想工作室 Backend Camp 第 6 梯招生(已截止)》 — SoJ 的學習筆記&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=/2020/02/20/goodideas-6th-backend-camps/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《好想工作室 Backend Camp 第 6 梯招生(已截止)》 — SoJ 的學習筆記&url=/2020/02/20/goodideas-6th-backend-camps/&via=" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=/2020/02/20/goodideas-6th-backend-camps/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=/2020/02/20/goodideas-6th-backend-camps/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/好想工作室/" class="color1">好想工作室</a>
+      
+    <a href="/tags/招募/" class="color3">招募</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#目標-產出好的工程師"><span class="post-toc-text">目標 產出好的工程師</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#好想工作室-backend-camp-主要學習方向"><span class="post-toc-text">好想工作室 Backend Camp 主要學習方向</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#報名前先問問自己"><span class="post-toc-text">報名前先問問自己…</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#常見問答"><span class="post-toc-text">常見問答</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#培訓費用"><span class="post-toc-text">培訓費用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#培訓期間"><span class="post-toc-text">培訓期間</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#招生條件"><span class="post-toc-text">招生條件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#報名方式"><span class="post-toc-text">報名方式</span></a></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2020/06/02/goodideas-backend-camp-7th/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          好想工作室 Backend Camp 第 7 梯招生(已截止)
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2019/01/14/Hexo-Setting/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">讓 Hexo 支援 markdown 語法</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        總訪客數：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        總訪問量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2021 SoJ<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 0
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/Hexo/">Hexo</a><a class="category-link" href="/categories/招生/">招生</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/好想工作室/" style="font-size: 20px;">好想工作室</a> <a href="/tags/招募/" style="font-size: 20px;">招募</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/好想工作室/" style="font-size: 20px;">好想工作室</a> <a href="/tags/招募/" style="font-size: 20px;">招募</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
