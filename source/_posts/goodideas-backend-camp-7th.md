@@ -8,8 +8,9 @@ tags:
 - 好想工作室
 - 招募
 index_img: img/goodideas.png
+banner_img: img/banner.jpg
 ---
-<img class="logo" src="/images/goodideas.png" alt="">
+<img class="logo" src="/img/goodideas.png" alt="">
 
 #### 前言：
 我們身處在一個網路發達、人手一機的資訊大爆炸年代，AI、VR、大數據...這些詞充斥著我們的生活，越來越多人想投入資訊圈，雖然網路上資源很多，但很多學習者都會在這裡卡關：
@@ -89,11 +90,3 @@ index_img: img/goodideas.png
 2. 是否試過自學？有遇到什麼困難嗎？
 3. 為什麼想來好想工作室？
 4. 獲得消息來源（朋友介紹、Facebook 或 PTT 等）。
-
-<style>
-.logo {
-  display: block;
-  margin: auto;
-  width: 100%;
-}
-</style>

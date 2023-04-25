@@ -8,8 +8,9 @@ tags:
 - 好想工作室
 - 招募
 index_img: img/goodideas.png
+banner_img: img/banner.jpg
 ---
-<img class="logo" src="/images/goodideas.png" alt="">
+<img class="logo" src="/img/goodideas.png" alt="">
 
 #### 前言：
 2020 年是個糟糕的一年，生活深受了新冠病毒疫情衝擊不說，出國旅遊泡湯，公司停工、倒閉的也不少(雖然臺灣影響相對少)。
@@ -104,11 +105,3 @@ index_img: img/goodideas.png
 2. 是否試過自學？有遇到什麼困難嗎？
 3. 為什麼想來好想工作室？
 4. 獲得消息來源（朋友介紹、Facebook 或 PTT 等）。
-
-<style>
-.logo {
-  display: block;
-  margin: auto;
-  width: 100%;
-}
-</style>

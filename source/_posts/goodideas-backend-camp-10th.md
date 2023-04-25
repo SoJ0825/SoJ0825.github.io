@@ -8,8 +8,9 @@ tags:
 - 好想工作室
 - 招募
 index_img: img/goodideas.png
+banner_img: img/banner.jpg
 ---
-<img class="logo" src="/images/goodideas.png" alt="">
+<img class="logo" src="/img/goodideas.png" alt="">
 
 #### 簡介：
 
@@ -23,7 +24,7 @@ index_img: img/goodideas.png
 #### 工程師需求多嗎？
 
 2022年4月前十大資訊人才需求統計，相較去年，今年有大幅增加的趨勢。職缺很多，但要不要投入？或者說你適合工程師嗎？
-<img class="info" src="/images/job_statistics.png" alt="">
+<img class="infoImage" src="/img/job_statistics.png" alt="">
 
 #### **你喜歡接受挑戰嗎？**
 
@@ -95,16 +96,3 @@ index_img: img/goodideas.png
 7. 想來好想工作室的主要原因？
 8. 描述你未來想工作的城市？為什麼想在這個城市工作？
 9. 獲得消息來源（朋友介紹、Dcard、Facebook 或 PTT 等）。
-
-<style>
-.logo {
-  display: block;
-  margin: auto;
-  width: 100%;
-}
-.info {
-  display: block;
-  margin: auto;
-  width: 80%;
-}
-</style>

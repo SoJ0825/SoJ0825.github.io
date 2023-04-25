@@ -8,7 +8,11 @@ tags:
 - 好想工作室
 - 招募
 index_img: img/goodideas.png
+banner_img: img/banner.jpg
 ---
+<img class="logo" src="/img/goodideas.png" alt="">
+
+
 #### AI 招生文：
 親愛的朋友，
 
@@ -42,7 +46,7 @@ index_img: img/goodideas.png
 #### 工程師需求多嗎？
 
 根據 104 人力銀行統計（如下圖），相較去年，今年軟體設計工程師的需求已經有明顯的下降趨勢，但現在還是入門的最佳時機！
-<img class="info" src="/images/202302_job_statistics.png" alt="">
+<img class="infoImage" src="/img/202302_job_statistics.png" alt="">
 
 我個人覺得：隨著疫情解封，數位化、軟體需求，確實不如「後疫情時代」帶來的多，但數位化一直都是未來的趨勢！大家看看 AI、元宇宙都吵多少年了，不要小看這些技術，雖然他們還在萌芽期，但爆發真的會像 iPhone 那樣，一火就火個好幾年，所以你不趁現在進場，等它火起來，要入門就晚了。
 
@@ -119,16 +123,3 @@ index_img: img/goodideas.png
 7. 想來好想工作室的主要原因？
 8. 描述你未來想工作的城市？為什麼想在這個城市工作？
 9. 獲得消息來源（朋友介紹、Dcard、Facebook 或 PTT 等）。
-
-<style>
-.logo {
-  display: block;
-  margin: auto;
-  width: 100%;
-}
-.info {
-  display: block;
-  margin: auto;
-  width: 80%;
-}
-</style>

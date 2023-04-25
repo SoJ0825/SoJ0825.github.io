@@ -8,6 +8,7 @@ tags:
 - 好想工作室
 - 招募
 index_img: img/goodideas.png
+banner_img: img/banner.jpg
 ---
 
 大家好
