@@ -103,8 +103,10 @@ theme: fluid
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
-
+  type: git
+  repo: git@github.com:SoJ0825/SoJ0825.github.io.git
+  branch: master
+  message: "{{ now('yyyy-MM-dd HH:mm:ss') }}"
 
 # Markdown-it config
 ## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki
