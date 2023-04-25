@@ -6,7 +6,7 @@ categories:
 author: SoJ
 tags:
     - Hexo
-cover_picture: images/markdown.png
+index_img: img/markdown.jpg
 ---
 
 # Hexo 設置

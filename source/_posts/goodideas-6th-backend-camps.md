@@ -7,7 +7,7 @@ author: SoJ
 tags:
 - 好想工作室
 - 招募
-cover_picture: images/goodideas.png
+index_img: img/goodideas.png
 ---
 
 大家好

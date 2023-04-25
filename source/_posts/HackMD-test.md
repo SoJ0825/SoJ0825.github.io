@@ -6,7 +6,7 @@ categories:
 author: SoJ
 tags:
     - Hexo
-cover_picture: images/HackMD.svg
+index_img: img/HackMD.svg
 ---
 
 功能介紹
