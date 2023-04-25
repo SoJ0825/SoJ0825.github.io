@@ -2,6 +2,8 @@
 
 'use strict';
 
+const crypto = require('crypto');
+
 // 生成前过滤文章
 hexo.extend.filter.register('before_generate', function() {
   this._bindLocals();
@@ -48,4 +50,22 @@ hexo.extend.filter.register('after_post_render', (page) => {
   // 移除 hexo-renderer-pandoc 生成的 <colgroup>
   page.content = page.content.replace(/<colgroup>.+?<\/colgroup>/gims, '');
   return page;
+});
+
+hexo.extend.filter.register('post_permalink', function(data){
+
+  const splits = data.split('/');
+  const year = splits[0];
+  const month = splits[1];
+  const day = splits[2];
+  const postDate = new Date(year, month, day);
+  const separateDate = new Date(2023, 4, 1);
+
+  if ( postDate < separateDate) {
+    return data;
+  } else {
+    const title = splits[3];
+    const fileName = crypto.createHash('md5').update(title).digest('hex').substring(0,7) + '.html';
+    return year + month + day + '/' + fileName;
+  }
 });
