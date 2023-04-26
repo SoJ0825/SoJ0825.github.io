@@ -1,0 +1,777 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-TW" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="SoJ">
+  <meta name="keywords" content="Laravel, MySQL, PHP, SoJ, SoJ&#39;s Blog, SoJ 的學習筆記">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"/>
+
+  
+    <meta name="description" content="AI 招生文： 親愛的朋友， 您是否也因為對軟體工程師這份職業的熱愛而來到這裡？您是否也因為想成為優秀的後端工程師而不斷學習，卻苦無良師益友而無所適從？ 如果您想要一個互相學習、自主學習的學習平台，那麼好想工作室絕對是您的最佳選擇。我們不同於傳統的教學方式，而是以自主學習和互相學習為主，讓學員們掌握學習方式，養成正確的學習觀念，以持續成長為目標。 在好想工作室，我們提供前端(Web camp)、">
+<meta property="og:type" content="article">
+<meta property="og:title" content="好想工作室 Backend Camp 第 11 梯招生">
+<meta property="og:url" content="https://soj0825.github.io/2023/03/27/goodideas-backend-camp-11th/index.html">
+<meta property="og:site_name" content="SoJ 的學習筆記">
+<meta property="og:description" content="AI 招生文： 親愛的朋友， 您是否也因為對軟體工程師這份職業的熱愛而來到這裡？您是否也因為想成為優秀的後端工程師而不斷學習，卻苦無良師益友而無所適從？ 如果您想要一個互相學習、自主學習的學習平台，那麼好想工作室絕對是您的最佳選擇。我們不同於傳統的教學方式，而是以自主學習和互相學習為主，讓學員們掌握學習方式，養成正確的學習觀念，以持續成長為目標。 在好想工作室，我們提供前端(Web camp)、">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://soj0825.github.io/img/goodideas.png">
+<meta property="article:published_time" content="2023-03-27T01:50:00.000Z">
+<meta property="article:modified_time" content="2023-04-26T02:52:52.730Z">
+<meta property="article:author" content="SoJ">
+<meta property="article:tag" content="好想工作室">
+<meta property="article:tag" content="招募">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://soj0825.github.io/img/goodideas.png">
+  
+  
+  
+  <title>好想工作室 Backend Camp 第 11 梯招生 - SoJ 的學習筆記</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"soj0825.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":"G-44G98SVV8E","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+    <!-- Google gtag.js -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('https://www.googletagmanager.com/gtag/js?id=G-44G98SVV8E', function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-44G98SVV8E');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>SoJ 的學習筆記</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首頁</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>歸檔</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分類</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>標籤</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>關於</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/banner.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="好想工作室 Backend Camp 第 11 梯招生"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-03-27 09:50" pubdate>
+          2023年3月27日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          23 分鐘
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">好想工作室 Backend Camp 第 11 梯招生</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <img class="logo" src="/img/goodideas.png" srcset="/img/loading.gif" lazyload alt="">
+<h1 id="AI-招生文："><a class="header-anchor" href="#AI-招生文："></a>AI 招生文：</h1>
+<p>親愛的朋友，</p>
+<p>您是否也因為對軟體工程師這份職業的熱愛而來到這裡？您是否也因為想成為優秀的後端工程師而不斷學習，卻苦無良師益友而無所適從？</p>
+<p>如果您想要一個互相學習、自主學習的學習平台，那麼好想工作室絕對是您的最佳選擇。我們不同於傳統的教學方式，而是以自主學習和互相學習為主，讓學員們掌握學習方式，養成正確的學習觀念，以持續成長為目標。</p>
+<p>在好想工作室，我們提供前端(Web camp)、後端(Backend camp)、安卓(Android camp)三個組別的免費培訓，專業的導師團隊會在您學習的路上給予指導和協助，並為您提供最新的技術資訊和學習資源。</p>
+<p>我們相信，正確的學習態度是學習的關鍵，只有在良好的學習氛圍中，您才能發揮自己的最大潛力。在好想工作室，您可以與志同道合的同學們互相學習、共同進步；您可以自主學習，選擇最適合自己的學習路徑，不斷嘗試和探索，最終成為優秀的軟體工程師。</p>
+<p>在好想工作室，您將有機會接觸到各種軟體開發項目，學習前沿的技術和開發工具，擁有實戰經驗，為自己的職業生涯打下堅實的基礎。</p>
+<p>現在就加入好想工作室的大家庭，和我們一起探索軟體工程的奧秘，一起實現夢想吧！</p>
+<p>如果您對我…</p>
+<h1 id="簡介："><a class="header-anchor" href="#簡介："></a>簡介：</h1>
+<p>大家好，我是好想工作室的 backend camp mentor 菘駿，身為一個軟體工程師，當然也要有一個英文代號：SoJ，這沒啥意思，只是純粹發音接近菘駿而已。</p>
+<p>不要懷疑，上面的介紹文內容都是真的，只是透過 ChatGPT 生成的，只可惜…免費版它回答有字數上限否則<s>我就可以偷懶了</s></p>
+<p>如果你還不知道 ChatGPT 那就趕快去認識一下，我相信再過幾年 AI 就會以一個非常親民的方式貼近我們的生活，我相信他會跟1990年代電腦問世、20世紀初智慧手機出現一樣是個劃時代的產品。</p>
+<p>說了這麼多，我想強調的是這個世界一直不斷再進化，而生活也逐漸數位化，如果你不努力學習新的事物，你很快就會被淘汰，成爲那種:老師沒教-&gt;我不會-&gt;我不學-&gt;一天到晚吵著說我也學不會的老頑固！說到底，都只是自己不想開始而已。</p>
+<p>好想工作室想要反轉大家這種根深蒂固的填鴨式學習法，讓大家自己發現問題，解析問題，再解析問題的過程中找出答案。我們相信只有不斷學習的人，才會變成最強的人！</p>
+<h1 id="工程師需求多嗎？"><a class="header-anchor" href="#工程師需求多嗎？"></a>工程師需求多嗎？</h1>
+<p>根據 104 人力銀行統計（如下圖），相較去年，今年軟體設計工程師的需求已經有明顯的下降趨勢，但現在還是入門的最佳時機！<br>
+<img class="infoImage" src="/img/202302_job_statistics.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>我個人覺得：隨著疫情解封，數位化、軟體需求，確實不如「後疫情時代」帶來的多，但數位化一直都是未來的趨勢！大家看看 AI、元宇宙都吵多少年了，不要小看這些技術，雖然他們還在萌芽期，但爆發真的會像 iPhone 那樣，一火就火個好幾年，所以你不趁現在進場，等它火起來，要入門就晚了。</p>
+<p>但不得不說， ChatGPT 的問世，真的讓初階工程師的工作更容易被取代，所以很多簡單的需求，你只要描述的好，程式碼可以透過 AI 生成了，那要工程師幹嘛？<br>
+我只能說，debug 跟功能微調都還是要工程師去執行， ChatGPT 的出現，只是加大了入門門檻而已，關鍵還在於如何快速、有效的學習，如果只想靠一個語言、一個框架技術吃到退休，那你只會加快你被 AI 淘汰的速度而已。</p>
+<h1 id="你喜歡接受挑戰嗎？"><a class="header-anchor" href="#你喜歡接受挑戰嗎？"></a><strong>你喜歡接受挑戰嗎？</strong></h1>
+<h3 id="挑戰1-熱忱"><a class="header-anchor" href="#挑戰1-熱忱"></a><strong>挑戰1: 熱忱</strong></h3>
+<p>我面談了很多學員，沒有一個不是懷抱熱忱過來的，但是熱忱是需要維持的，如果只靠滿腔熱血就想投入工程師，而無法靜下心來查閱枯燥乏味的文件，那你很快就會失去耐心前進。無論什麼方式，你都得想辦法調適心情，爲自己補血</p>
+<h3 id="挑戰2-學習力"><a class="header-anchor" href="#挑戰2-學習力"></a><strong>挑戰2: 學習力</strong></h3>
+<p>科技的進步與改變非常的快。程式語言也是推陳出新，沒幾個月就有新的程式語言、框架、工具、與技術。<br>
+更多的追根究底，學習最怕的就是得過且過，如果一開始思路就錯了，只會越走越偏。</p>
+<h3 id="挑戰3-協作力"><a class="header-anchor" href="#挑戰3-協作力"></a><strong>挑戰3: 協作力</strong></h3>
+<p>優秀的工程師也是優秀的團隊成員。你寫的程式不只可與機器溝通，更要緊的是跟其他工程師溝通。你要知道，程式碼的「一生」多數時間都是被其他人讀取，這些人常常需要修改程式，或在其基礎上創造新的事物。</p>
+<p>你也要知道，沒有什麼完美的設計、服務或工具能夠全面適用於各種狀況。優秀的工程師知道可用的選擇，知道自己手上的資源，做出適宜的權衡。怎麼掌握手上的資源，就要學會怎麼「有效的」溝通</p>
+<h1 id="好想工作室-Backend-Camp-主要學習方向"><a class="header-anchor" href="#好想工作室-Backend-Camp-主要學習方向"></a><strong>好想工作室 Backend Camp 主要學習方向</strong></h1>
+<p>系統：Linux or MacOS<br>
+語言：PHP<br>
+框架：Laravel<br>
+資料庫：關聯式資料庫 MySQL<br>
+雲端服務：AWS or GCP</p>
+<h1 id="常見問答"><a class="header-anchor" href="#常見問答"></a><strong>常見問答</strong></h1>
+<h3 id="Q：參加培訓需要學費或額外費用嗎？"><a class="header-anchor" href="#Q：參加培訓需要學費或額外費用嗎？"></a><strong>Q：參加培訓需要學費或額外費用嗎？</strong></h3>
+<p>台南好想工作室 Backend Camp 6 個月培訓期間內免費。</p>
+<h3 id="Q：培訓過程主要為自我學習研究？"><a class="header-anchor" href="#Q：培訓過程主要為自我學習研究？"></a><strong>Q：培訓過程主要為自我學習研究？</strong></h3>
+<p>是的。我們沒有老師上課也不會提供課綱。</p>
+<h3 id="Q：有可能彈性調整學習時間？-晚一點來或固定請假？"><a class="header-anchor" href="#Q：有可能彈性調整學習時間？-晚一點來或固定請假？"></a><strong>Q：有可能彈性調整學習時間？ 晚一點來或固定請假？</strong></h3>
+<p>學習效率該如何提升，包含固定生活作息以及每週持續性，皆為學習的一部分。彈性調整，可以視情況晚點來/晚點走。固定請假，需要看個人的情況，因每個人而定。</p>
+<h3 id="Q：因白天工作，有可能晚上或遠端培訓嗎？"><a class="header-anchor" href="#Q：因白天工作，有可能晚上或遠端培訓嗎？"></a><strong>Q：因白天工作，有可能晚上或遠端培訓嗎？</strong></h3>
+<p>不行！時間是工作室希望學員付出的唯一要求，如果無法付出時間來工作室，建議可以先嘗試上線上課程。</p>
+<h3 id="Q：非相關背景，需每天兩地通勤，已成立家庭是否還合適-Training？"><a class="header-anchor" href="#Q：非相關背景，需每天兩地通勤，已成立家庭是否還合適-Training？"></a><strong>Q：非相關背景，需每天兩地通勤，已成立家庭是否還合適 Training？</strong></h3>
+<p>每個人皆有不同的現實考量，但沒有人能因為這些條件決定你是否適合 training，只有自己能選擇未來要如何前行。這些問題是你的顧慮，與好想考慮學員的條件無關。</p>
+<h3 id="Q：培訓過程感到虛耗時間？"><a class="header-anchor" href="#Q：培訓過程感到虛耗時間？"></a><strong>Q：培訓過程感到虛耗時間？</strong></h3>
+<p>「時間」是來好想工作室唯一付出的，也是需要自己掌握的學習資源。學習過程感到沒有重心，或在摸索方向，可以與伙伴、mentor以及任何你想討論的人聊聊。不管在不在好想 training，一旦有了方向，請全力以赴，不要想省掉任何該努力的時間，否則還是會有虛秏時間的感覺。</p>
+<h3 id="Q：招募需通過篩選機制？"><a class="header-anchor" href="#Q：招募需通過篩選機制？"></a><strong>Q：招募需通過篩選機制？</strong></h3>
+<p>對，因為好想工作室的資源有限，希望把資源給需要而適合的人。</p>
+<h1 id="培訓地點"><a class="header-anchor" href="#培訓地點"></a>培訓地點</h1>
+<p>好想工作室 — 東區北門路2段16號 L2A（台南文創園區內）</p>
+<h1 id="培訓費用"><a class="header-anchor" href="#培訓費用"></a>培訓費用</h1>
+<p>完全免費</p>
+<h1 id="招生條件"><a class="header-anchor" href="#招生條件"></a>招生條件</h1>
+<h3 id="乙台筆電，作業系統-Linux-Mac。"><a class="header-anchor" href="#乙台筆電，作業系統-Linux-Mac。"></a><strong>乙台筆電，作業系統 Linux / Mac。</strong></h3>
+<h3 id="連續六個月，每週一至五"><a class="header-anchor" href="#連續六個月，每週一至五"></a><strong>連續六個月，每週一至五</strong></h3>
+<h1 id="報名方式"><a class="header-anchor" href="#報名方式"></a>報名方式</h1>
+<p>寄件信箱：sojphp@gmail.com<br>
+報名期限：即日起至 2023年4月30日 23:59:59 止，因為空間有限，如果招募滿額也會停止繼續招生（如果停止招生會在此標示）。<br>
+撰寫主旨：「好想工作室 Backend Camp 申請」<br>
+內容格式：</p>
+<ol>
+<li>自我簡介 (現居 / 過去學 / 經歷等)。</li>
+<li>描述你過去深入研究的主題（不限課業、興趣或是與朋友討論而進一步研究都可以）。</li>
+<li>是否曾經有過任何活動的工作人員經驗？解決過什麼問題？</li>
+<li>對於「與人交流」和「上台分享」的看法？</li>
+<li>回憶過去，感恩、生氣、沮喪的經驗各描述一件事。</li>
+<li>為什麼想學習後端的技術？有學習過 web or mobile 的技術嗎？</li>
+<li>想來好想工作室的主要原因？</li>
+<li>描述你未來想工作的城市？為什麼想在這個城市工作？</li>
+<li>獲得消息來源（朋友介紹、Dcard、Facebook 或 PTT 等）。</li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8B%9B%E7%94%9F/" class="category-chain-item">招生</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%A5%BD%E6%83%B3%E5%B7%A5%E4%BD%9C%E5%AE%A4/">#好想工作室</a>
+      
+        <a href="/tags/%E6%8B%9B%E5%8B%9F/">#招募</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>好想工作室 Backend Camp 第 11 梯招生</div>
+      <div>https://soj0825.github.io/2023/03/27/goodideas-backend-camp-11th/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>SoJ</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>發布於</div>
+          <div>2023年3月27日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>許可協議</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/08/08/goodideas-backend-camp-10th/" title="好想工作室 Backend Camp 第 10 梯招生(已截止)">
+                        <span class="hidden-mobile">好想工作室 Backend Camp 第 10 梯招生(已截止)</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"aeb5c7daae399811e018","clientSecret":"2fbed144bbe10d24434da2becc2b4e6cdde0d7b0","repo":"soj0825.github.io","owner":"SoJ0825","admin":["SoJ0825"],"language":"zh-TW","labels":["blog"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: '4135e331266709f328b3edc97a79b200'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目錄</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜尋</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">關鍵字</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允許 JavaScript 運行的環境下瀏覽效果更佳</div>
+  </noscript>
+</body>
+</html>

@@ -1,0 +1,966 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-TW" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="SoJ">
+  <meta name="keywords" content="Laravel, MySQL, PHP, SoJ, SoJ&#39;s Blog, SoJ 的學習筆記">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"/>
+
+  
+    <meta name="description" content="Hexo 設置 首先我要先謝謝 好想工作室 的前輩 Chris大大，本文大部分都是參考他的文章，大家可以去逛逛他的筆記，很多技術相關的文章可以參考。  Chris 筆記 - Hexo 研究筆記 1  預先安裝  NodeJS &#x3D;&gt; 會順便安裝 npm 套件管理系統  brew install node  Hexo 主程式 &#x3D;&gt; 透過 npm 安裝  npm install hexo-c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="讓 Hexo 支援 markdown 語法">
+<meta property="og:url" content="https://soj0825.github.io/2019/01/14/Hexo-Setting/index.html">
+<meta property="og:site_name" content="SoJ 的學習筆記">
+<meta property="og:description" content="Hexo 設置 首先我要先謝謝 好想工作室 的前輩 Chris大大，本文大部分都是參考他的文章，大家可以去逛逛他的筆記，很多技術相關的文章可以參考。  Chris 筆記 - Hexo 研究筆記 1  預先安裝  NodeJS &#x3D;&gt; 會順便安裝 npm 套件管理系統  brew install node  Hexo 主程式 &#x3D;&gt; 透過 npm 安裝  npm install hexo-c">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://soj0825.github.io/img/markdown.jpg">
+<meta property="article:published_time" content="2019-01-13T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-04-25T17:12:14.376Z">
+<meta property="article:author" content="SoJ">
+<meta property="article:tag" content="Hexo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://soj0825.github.io/img/markdown.jpg">
+  
+  
+  
+  <title>讓 Hexo 支援 markdown 語法 - SoJ 的學習筆記</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"soj0825.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":"G-44G98SVV8E","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+    <!-- Google gtag.js -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('https://www.googletagmanager.com/gtag/js?id=G-44G98SVV8E', function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-44G98SVV8E');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>SoJ 的學習筆記</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首頁</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>歸檔</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分類</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>標籤</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>關於</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/banner.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="讓 Hexo 支援 markdown 語法"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2019-01-14 00:00" pubdate>
+          2019年1月14日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5.8k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          49 分鐘
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">讓 Hexo 支援 markdown 語法</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Hexo-設置"><a class="header-anchor" href="#Hexo-設置"></a>Hexo 設置</h1>
+<p>首先我要先謝謝 <a target="_blank" rel="noopener" href="http://goodideas-studio.com/">好想工作室</a> 的前輩 <a target="_blank" rel="noopener" href="https://dwatow.github.io/">Chris大大</a>，本文大部分都是參考他的文章，大家可以去逛逛他的筆記，很多技術相關的文章可以參考。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://dwatow.github.io/2017/06-18-hexo/re-equip-hexo1/">Chris 筆記 - Hexo 研究筆記 1</a></p>
+</blockquote>
+<h2 id="預先安裝"><a class="header-anchor" href="#預先安裝"></a>預先安裝</h2>
+<ol>
+<li>NodeJS =&gt; 會順便安裝 npm 套件管理系統</li>
+</ol>
+<pre><code class="hljs shell">brew install node</code></pre>
+<ol start="2">
+<li>Hexo 主程式 =&gt; 透過 npm 安裝</li>
+</ol>
+<pre><code class="hljs shell">npm install hexo-cli -g</code></pre>
+<ol start="3">
+<li>建立一個新資料夾並安裝 hexo 基礎框架</li>
+</ol>
+<pre><code class="hljs shell">hexo init blog</code></pre>
+<ol start="4">
+<li>進入資料夾 <code>cd blog</code>，安裝相關套件</li>
+</ol>
+<pre><code class="hljs shell">npm install</code></pre>
+<ol start="5">
+<li>啟動本機 server(本機先查看結果)</li>
+</ol>
+<pre><code class="hljs shell">hexo server</code></pre>
+<h2 id="支援-markdown-語法"><a class="header-anchor" href="#支援-markdown-語法"></a>支援 markdown 語法</h2>
+<p>讓 Hexo 支援 markdown 語法，有一個最大好處，就是因為 <a target="_blank" rel="noopener" href="https://hackmd.io/">HackMD</a> 本身也是支援 markdown 語法，這樣在 HackMD 上的筆記，也可以快速轉換成我們部落格的貼文。</p>
+<p>以下請參考 Chris 筆記</p>
+<ol>
+<li>刪除原始渲染器</li>
+</ol>
+<pre><code class="hljs shell">npm uninstall hexo-renderer-marked</code></pre>
+<ol start="2">
+<li>安裝套件 hexo-renderer-markdown-it</li>
+</ol>
+<pre><code class="hljs shell">npm install git+https://github.com/hexojs/hexo-renderer-markdown-it.git --save</code></pre>
+<ol start="3">
+<li>安裝渲染器外掛(下面共11個)</li>
+</ol>
+<pre><code class="hljs shell">npm install markdown-it-abbr markdown-it-container markdown-it-deflist markdown-it-emoji markdown-it-footnote markdown-it-imsize markdown-it-ins markdown-it-mark markdown-it-regexp markdown-it-sub markdown-it-sup --save</code></pre>
+<ol start="4">
+<li>HackMD 不用裝但 Hexo 要裝的套件</li>
+</ol>
+<pre><code class="hljs shell">npm install markdown-it-checkbox --save</code></pre>
+<ol start="5">
+<li>配置 Hexo 設定檔</li>
+</ol>
+<pre><code class="hljs yaml"><span class="hljs-comment"># Markdown-it config</span>
+<span class="hljs-comment">## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki</span>
+<span class="hljs-attr">markdown:</span>
+  <span class="hljs-attr">render:</span>
+    <span class="hljs-attr">html:</span> <span class="hljs-literal">true</span> <span class="hljs-comment"># Doesn&#x27;t escape HTML content so the tags will appear as html.</span>
+    <span class="hljs-comment"># xhtmlOut: false # Parser will not produce XHTML compliant code.</span>
+    <span class="hljs-attr">breaks:</span> <span class="hljs-literal">true</span> <span class="hljs-comment"># Parser produces `&lt;br&gt;` tags every time there is a line break in the source document.</span>
+    <span class="hljs-attr">langPrefix:</span> <span class="hljs-string">&#x27;&#x27;</span>
+    <span class="hljs-attr">linkify:</span> <span class="hljs-literal">true</span> <span class="hljs-comment"># Returns text links as text.</span>
+    <span class="hljs-attr">typographer:</span> <span class="hljs-literal">true</span> <span class="hljs-comment"># Substitution of common typographical elements will take place.</span>
+    <span class="hljs-attr">quotes:</span> <span class="hljs-string">&#x27;“”‘’&#x27;</span> <span class="hljs-comment"># &quot;double&quot; will be turned into “single”</span>
+    <span class="hljs-comment"># &#x27;single&#x27; will be turned into ‘single’</span>
+  <span class="hljs-attr">plugins:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">markdown-it-abbr</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">markdown-it-container</span>
+      <span class="hljs-attr">options:</span> <span class="hljs-string">success</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">markdown-it-container</span>
+      <span class="hljs-attr">options:</span> <span class="hljs-string">info</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">markdown-it-container</span>
+      <span class="hljs-attr">options:</span> <span class="hljs-string">warning</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">markdown-it-container</span>
+      <span class="hljs-attr">options:</span> <span class="hljs-string">danger</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">markdown-it-deflist</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">markdown-it-emoji</span>
+      <span class="hljs-attr">options:</span>
+        <span class="hljs-attr">shortcuts:</span> &#123;&#125;
+    <span class="hljs-bullet">-</span> <span class="hljs-string">markdown-it-footnote</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">markdown-it-imsize</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">markdown-it-ins</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">markdown-it-katex</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">markdown-it-mark</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">markdown-it-regexp</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">markdown-it-sub</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">markdown-it-sup</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">markdown-it-checkbox</span>
+  <span class="hljs-attr">anchors:</span>
+    <span class="hljs-attr">level:</span> <span class="hljs-number">1</span> <span class="hljs-comment"># Minimum level for ID creation. (Ex. h2 to h6)</span>
+    <span class="hljs-attr">collisionSuffix:</span> <span class="hljs-string">&#x27;v&#x27;</span> <span class="hljs-comment"># A suffix that is prepended to the number given if the ID is repeated.</span>
+    <span class="hljs-attr">permalink:</span> <span class="hljs-literal">true</span> <span class="hljs-comment"># If true, creates an anchor tag with a permalink besides the heading.</span>
+    <span class="hljs-attr">permalinkClass:</span> <span class="hljs-string">header-anchor</span> <span class="hljs-comment"># Class used for the permalink anchor tag.</span>
+    <span class="hljs-attr">permalinkSymbol:</span> <span class="hljs-string">&#x27;&#x27;</span> <span class="hljs-comment"># The symbol used to make the permalink.</span></code></pre>
+<ol start="6">
+<li>安裝過濾器
+<ul>
+<li>支援 流程圖</li>
+</ul>
+</li>
+</ol>
+<pre><code class="hljs shell">npm install hexo-filter-flowchart --save</code></pre>
+<ul>
+<li>UML 循序圖</li>
+</ul>
+<pre><code class="hljs shell">npm install hexo-filter-sequence --save</code></pre>
+<hr>
+<h2 id="數學表達式"><a class="header-anchor" href="#數學表達式"></a>數學表達式</h2>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://dwatow.github.io/2018/01-28-hexo/katex/">Chris 筆記 - hexo加上數學式 MathJax</a></p>
+</blockquote>
+<ol>
+<li>安裝套件</li>
+</ol>
+<pre><code class="hljs shell">npm install markdown-it-katex --save</code></pre>
+<ol start="2">
+<li>配置 hexo 設定檔</li>
+</ol>
+<pre><code class="hljs nestedtext"><span class="hljs-attribute">markdown</span><span class="hljs-punctuation">:</span>
+  <span class="hljs-attribute">plugins</span><span class="hljs-punctuation">:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">markdown-it-katex</span></code></pre>
+<ol start="3">
+<li>加入 CSS<br>
+<code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css&quot;&gt; </code></li>
+</ol>
+<p>其中 CSS 要加在 <code>themes&gt;&gt;layout&gt;&gt;_partial&gt;&gt;head.ejs</code> 的檔案裡，只要加在 <code>&lt;head&gt;</code> <code>&lt;/head&gt;</code> 之間任意位置就可以</p>
+<hr>
+<h2 id="額外安裝"><a class="header-anchor" href="#額外安裝"></a>額外安裝</h2>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/hexo-pdf">hexo-pdf 安裝說明</a></p>
+</blockquote>
+<p>hexo-pdf =&gt; 可支援 pdf 和 slideShare(簡報)</p>
+<pre><code class="hljs shell">npm install --save hexo-pdf</code></pre>
+<h3 id="Useage"><a class="header-anchor" href="#Useage"></a>Useage</h3>
+<p>Normal PDF</p>
+<pre><code class="hljs twig"><span class="hljs-template-tag">&#123;%</span> <span class="hljs-name">pdf</span> http://<span class="hljs-number">7</span>xov<span class="hljs-number">2</span>f.com<span class="hljs-number">1</span>.z<span class="hljs-number">0</span>.glb.clouddn.com/bash_freshman.pdf <span class="hljs-template-tag">%&#125;</span></code></pre>
+<p>or</p>
+<pre><code class="hljs django"><span class="hljs-template-tag">&#123;% <span class="hljs-name">pdf</span> ./bash_freshman.pdf %&#125;</span></code></pre>
+<p>Google drive</p>
+<pre><code class="hljs awk">&#123;% pdf https:<span class="hljs-regexp">//</span>drive.google.com<span class="hljs-regexp">/file/</span>d<span class="hljs-regexp">/0B6qSwdwPxPRdTEliX0dhQ2JfUEU/</span>preview %&#125;</code></pre>
+<p>Slideshare</p>
+<pre><code class="hljs awk">&#123;% pdf http:<span class="hljs-regexp">//</span>www.slideshare.net<span class="hljs-regexp">/slideshow/</span>embed_code<span class="hljs-regexp">/key/</span><span class="hljs-number">8</span>Jl0hUt2OKUOOE %&#125;</code></pre>
+<hr>
+<h2 id="指定程式碼開始行號"><a class="header-anchor" href="#指定程式碼開始行號"></a>指定程式碼開始行號</h2>
+<p>範例如下<br>
+<img src="https://i.imgur.com/oOI71pQ.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>配置 hexo 的 <code>_config.yml</code></p>
+<pre><code class="hljs autoit">highlight:
+  first_line_number: <span class="hljs-string">&#x27;inline&#x27;</span> <span class="hljs-meta"># | <span class="hljs-string">&#x27;always1&#x27;</span></span></code></pre>
+<hr>
+<h1 id="CSS-相關"><a class="header-anchor" href="#CSS-相關"></a>CSS 相關</h1>
+<h2 id="Hackmd-中的特殊圖示"><a class="header-anchor" href="#Hackmd-中的特殊圖示"></a>Hackmd 中的特殊圖示</h2>
+<h3 id="範例"><a class="header-anchor" href="#範例"></a>範例</h3>
+<p><strong>電腦 &amp; 平板</strong></p>
+<p><i class="fa fa-edit fa-fw"></i> 編輯：只看到編輯器<br>
+<i class="fa fa-eye fa-fw"></i> 檢視：只看到結果<br>
+<i class="fa fa-columns fa-fw"></i> 同時：同時看到兩邊</p>
+<p><strong>手機</strong></p>
+<p><i class="fa fa-toggle-on fa-fw"></i> 檢視：只看到結果<br>
+<i class="fa fa-toggle-off fa-fw"></i> 編輯：只看到編輯器</p>
+<h3 id="做法"><a class="header-anchor" href="#做法"></a>做法</h3>
+<p>要顯示上面的特殊圖示要在 <code>themes&gt;&gt;layout&gt;&gt;_partial&gt;&gt;head.ejs</code> 的檔案裡，<code>&lt;head&gt;</code> <code>&lt;/head&gt;</code> 之間任意位置加入下方 CSS 條件<br>
+<code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css&quot;&gt;</code></p>
+<h2 id="警告區塊"><a class="header-anchor" href="#警告區塊"></a>警告區塊</h2>
+<ul>
+<li>範例</li>
+</ul>
+<div class="success">
+<p>耶 🎉</p>
+</div>
+<div class="info">
+<p>這是訊息 📣</p>
+</div>
+<div class="warning">
+<p>注意 ⚡</p>
+</div>
+<div class="danger">
+<p>喔不 🔥</p>
+</div>
+<p>在主題的 <code>source&gt;&gt;style.css</code> 或者 <code>source&gt;&gt;style.less</code> 或者 <code>source&gt;&gt;style.styl</code><br>
+(每個主題的 css 存放路徑或檔名可能不太一樣，要找一下，通常檔名都是 style)</p>
+<pre><code class="hljs css"><span class="hljs-selector-class">.success</span>, <span class="hljs-selector-class">.info</span>, <span class="hljs-selector-class">.warning</span>, <span class="hljs-selector-class">.danger</span> &#123;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">15px</span>;
+  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid transparent;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">4px</span>;
+&#125;
+
+<span class="hljs-selector-class">.success</span> &#123;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#3c763d</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#dff0d8</span>;
+  <span class="hljs-attribute">border-color</span>: <span class="hljs-number">#d6e9c6</span>;
+&#125;
+
+<span class="hljs-selector-class">.info</span> &#123;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#31708f</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#d9edf7</span>;
+  <span class="hljs-attribute">border-color</span>: <span class="hljs-number">#bce8f1</span>;
+&#125;
+
+<span class="hljs-selector-class">.warning</span> &#123;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#8a6d3b</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#fcf8e3</span>;
+  <span class="hljs-attribute">border-color</span>: <span class="hljs-number">#faebcc</span>;
+&#125;
+
+<span class="hljs-selector-class">.danger</span> &#123;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#a94442</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#f2dede</span>;
+  <span class="hljs-attribute">border-color</span>: <span class="hljs-number">#ebccd1</span>;
+&#125;</code></pre>
+<hr>
+<h3 id="佈署到-github"><a class="header-anchor" href="#佈署到-github"></a>佈署到 github</h3>
+<ol>
+<li>安裝佈署套件</li>
+</ol>
+<pre><code class="hljs shell">npm install hexo-deployer-git --save</code></pre>
+<ol start="2">
+<li>配置 hexo 設定檔</li>
+</ol>
+<pre><code class="hljs dts"><span class="hljs-symbol">deploy:</span>
+<span class="hljs-symbol">  type:</span> git
+<span class="hljs-symbol">  repo:</span> <span class="hljs-params">&lt;repository url&gt;</span>
+<span class="hljs-symbol">  branch:</span> [branch]
+<span class="hljs-symbol">  message:</span> [message]</code></pre>
+<ol start="3">
+<li>上傳 github</li>
+</ol>
+<pre><code class="hljs shell">hexo deploy -g</code></pre>
+<hr>
+<h3 id="安裝套件"><a class="header-anchor" href="#安裝套件"></a>安裝套件</h3>
+<pre><code class="hljs json"><span class="hljs-attr">&quot;dependencies&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+  <span class="hljs-attr">&quot;hexo&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^3.7.0&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;hexo-autoprefixer&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^2.0.0&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;hexo-deployer-git&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^0.3.1&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;hexo-filter-flowchart&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^1.0.4&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;hexo-filter-sequence&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^1.0.3&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;hexo-generator-archive&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^0.1.5&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;hexo-generator-category&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^0.1.3&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;hexo-generator-feed&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^1.2.2&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;hexo-generator-index&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^0.2.1&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;hexo-generator-json-content&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^3.0.1&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;hexo-generator-search&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^2.4.0&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;hexo-generator-tag&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^0.2.0&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;hexo-helper-qrcode&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^1.0.2&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;hexo-pdf&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^1.1.1&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;hexo-recommended-posts&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^1.0.3&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;hexo-renderer-ejs&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^0.3.1&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;hexo-renderer-less&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^1.0.0&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;hexo-renderer-markdown-it&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;git+https://github.com/hexojs/hexo-renderer-markdown-it.git&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;hexo-renderer-stylus&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^0.3.3&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;hexo-server&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^0.3.1&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;markdown-it-abbr&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^1.0.4&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;markdown-it-checkbox&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^1.1.0&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;markdown-it-container&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^2.0.0&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;markdown-it-deflist&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^2.0.3&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;markdown-it-emoji&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^1.4.0&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;markdown-it-footnote&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^3.0.1&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;markdown-it-imsize&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^2.0.1&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;markdown-it-ins&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^2.0.0&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;markdown-it-katex&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^2.0.3&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;markdown-it-mark&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^2.0.0&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;markdown-it-regexp&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^0.4.0&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;markdown-it-sub&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^1.0.0&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;markdown-it-sup&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^1.0.0&quot;</span>
+<span class="hljs-punctuation">&#125;</span></code></pre>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Hexo/" class="category-chain-item">Hexo</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Hexo/">#Hexo</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>讓 Hexo 支援 markdown 語法</div>
+      <div>https://soj0825.github.io/2019/01/14/Hexo-Setting/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>SoJ</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>發布於</div>
+          <div>2019年1月14日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>許可協議</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/02/20/goodideas-6th-backend-camps/" title="好想工作室 Backend Camp 第 6 梯招生(已截止)">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">好想工作室 Backend Camp 第 6 梯招生(已截止)</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2019/01/14/HackMD-test/" title="測試 hackmd 功能">
+                        <span class="hidden-mobile">測試 hackmd 功能</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"aeb5c7daae399811e018","clientSecret":"2fbed144bbe10d24434da2becc2b4e6cdde0d7b0","repo":"soj0825.github.io","owner":"SoJ0825","admin":["SoJ0825"],"language":"zh-TW","labels":["blog"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: 'eb136ef6380f52851b8f1151105ce073'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目錄</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜尋</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">關鍵字</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允許 JavaScript 運行的環境下瀏覽效果更佳</div>
+  </noscript>
+</body>
+</html>

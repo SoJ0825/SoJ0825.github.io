@@ -1,0 +1,1284 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-TW" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="SoJ">
+  <meta name="keywords" content="Laravel, MySQL, PHP, SoJ, SoJ&#39;s Blog, SoJ 的學習筆記">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"/>
+
+  
+    <meta name="description" content="功能介紹 English version 中文版 日本語版 請不要修改這份筆記 非常謝謝您 😄 如果要說 嗨 或是 玩些東西，請至 遊樂場 特賣會 歡迎來自 Front-End Developers Taiwan 的各位！💯 歡迎來自 g0v 的各位！👍 歡迎來自 程式人雜誌 的各位！😃 簡介  HackMD 是個跨平台的 Markdown 即時協作筆記 所以您可以在電腦、平板甚至是手機與">
+<meta property="og:type" content="article">
+<meta property="og:title" content="測試 hackmd 功能">
+<meta property="og:url" content="https://soj0825.github.io/2019/01/14/HackMD-test/index.html">
+<meta property="og:site_name" content="SoJ 的學習筆記">
+<meta property="og:description" content="功能介紹 English version 中文版 日本語版 請不要修改這份筆記 非常謝謝您 😄 如果要說 嗨 或是 玩些東西，請至 遊樂場 特賣會 歡迎來自 Front-End Developers Taiwan 的各位！💯 歡迎來自 g0v 的各位！👍 歡迎來自 程式人雜誌 的各位！😃 簡介  HackMD 是個跨平台的 Markdown 即時協作筆記 所以您可以在電腦、平板甚至是手機與">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://soj0825.github.io/img/HackMD.svg">
+<meta property="article:published_time" content="2019-01-13T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-04-25T17:12:14.376Z">
+<meta property="article:author" content="SoJ">
+<meta property="article:tag" content="Hexo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://soj0825.github.io/img/HackMD.svg">
+  
+  
+  
+  <title>測試 hackmd 功能 - SoJ 的學習筆記</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"soj0825.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":"G-44G98SVV8E","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+    <!-- Google gtag.js -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('https://www.googletagmanager.com/gtag/js?id=G-44G98SVV8E', function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-44G98SVV8E');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>SoJ 的學習筆記</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首頁</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>歸檔</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分類</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>標籤</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>關於</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/banner.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="測試 hackmd 功能"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2019-01-14 00:00" pubdate>
+          2019年1月14日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          6.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          56 分鐘
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">測試 hackmd 功能</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="功能介紹"><a class="header-anchor" href="#功能介紹"></a>功能介紹</h1>
+<p><strong><a href="/features">English version</a></strong><br>
+<strong><a href="/TKNuhom7S62OV6bDyBglXA">中文版</a></strong><br>
+<strong><a href="/b_l4reliTdWOSn9SiCmbJQ">日本語版</a></strong></p>
+<p><strong>請不要修改這份筆記</strong> 非常謝謝您 😄<br>
+<strong>如果要說 嗨 或是 玩些東西，請至 <a href="/SA8inq7VTmO8jIWC5QsMcw">遊樂場</a></strong></p>
+<h1 id="特賣會"><a class="header-anchor" href="#特賣會"></a>特賣會</h1>
+<p><strong>歡迎來自 Front-End Developers Taiwan 的各位！</strong>💯<br>
+<strong>歡迎來自 g0v 的各位！</strong>👍<br>
+<strong>歡迎來自 程式人雜誌 的各位！</strong>😃</p>
+<h1 id="簡介"><a class="header-anchor" href="#簡介"></a>簡介</h1>
+<p><i class="fa fa-file-text"></i> <strong>HackMD</strong> 是個跨平台的 Markdown 即時協作筆記<br>
+所以您可以在<strong>電腦、平板甚至是手機</strong>與其他人做筆記！<br>
+同時也可以在 <strong><a href="/">首頁</a></strong> 透過 <strong>Facebook、Twitter、GitHub、Dropbox</strong> 登入</p>
+<p>如有任何問題或是狀況，請至 <a target="_blank" rel="noopener" href="https://github.com/hackmdio/hackmd-io-issues/issues/new">GitHub</a> 回報問題<br>
+如果需要即時支援，請使用 <a target="_blank" rel="noopener" href="https://www.messenger.com/t/hackmdio">Facebook message</a><br>
+<strong>謝謝您！</strong></p>
+<h1 id="工作區"><a class="header-anchor" href="#工作區"></a>工作區</h1>
+<h2 id="模式"><a class="header-anchor" href="#模式"></a>模式</h2>
+<p><strong>電腦 &amp; 平板</strong></p>
+<p><i class="fa fa-edit fa-fw"></i> 編輯：只看到編輯器<br>
+<i class="fa fa-eye fa-fw"></i> 檢視：只看到結果<br>
+<i class="fa fa-columns fa-fw"></i> 同時：同時看到兩邊</p>
+<p><strong>手機</strong></p>
+<p><i class="fa fa-toggle-on fa-fw"></i> 檢視：只看到結果<br>
+<i class="fa fa-toggle-off fa-fw"></i> 編輯：只看到編輯器</p>
+<h2 id="上傳圖片"><a class="header-anchor" href="#上傳圖片"></a>上傳圖片</h2>
+<p>只要按下這個按鈕 <i class="fa fa-camera"></i><br>
+或是 <strong>拖放</strong> 圖片到編輯器，甚至 <strong>貼上</strong> 圖片也可以喔！<br>
+這會自動上傳圖片至 <strong><a target="_blank" rel="noopener" href="http://imgur.com">imgur</a></strong>，啥都不必煩惱了 🎉<br>
+<img src="https://i.imgur.com/9cgQVqD.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h2 id="分享筆記"><a class="header-anchor" href="#分享筆記"></a>分享筆記</h2>
+<p>如果您想分享 <strong>可編輯的</strong> 筆記，複製這份文件的網址就好<br>
+如果您想分享 <strong>只可讀的</strong> 筆記，按下這個按鈕 <i class="fa fa-share-alt"></i> 然後複製網址</p>
+<h2 id="儲存"><a class="header-anchor" href="#儲存"></a>儲存</h2>
+<p>目前可以儲存至 <strong>Dropbox</strong> <i class="fa fa-dropbox"></i> 或是存放 <strong>.md</strong> <i class="fa fa-file-text"></i> 到您的本機</p>
+<h2 id="匯入"><a class="header-anchor" href="#匯入"></a>匯入</h2>
+<p>就像上面的儲存功能，您可以從 <strong>Dropbox</strong> <i class="fa fa-dropbox"></i> 匯入 <strong>.md</strong> <i class="fa fa-file-text"></i><br>
+或是從 <strong>剪貼簿</strong> <i class="fa fa-clipboard"></i> 匯入，而且這可以轉換 <strong>html</strong> 喔 😃</p>
+<h2 id="權限"><a class="header-anchor" href="#權限"></a>權限</h2>
+<p>檢視右上方有個小按鈕可以修改筆記權限，目前有六種選項：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:center">擁有者 可讀/寫</th>
+<th style="text-align:center">已登入者 可讀</th>
+<th style="text-align:center">已登入者 可寫</th>
+<th style="text-align:center">訪客 可讀</th>
+<th style="text-align:center">訪客 可寫</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><span class="text-nowrap"><i class="fa fa-leaf fa-fw"></i> <strong>Freely</strong></span></td>
+<td style="text-align:center">✔</td>
+<td style="text-align:center">✔</td>
+<td style="text-align:center">✔</td>
+<td style="text-align:center">✔</td>
+<td style="text-align:center">✔</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="text-nowrap"><i class="fa fa-pencil fa-fw"></i> <strong>Editable</strong></span></td>
+<td style="text-align:center">✔</td>
+<td style="text-align:center">✔</td>
+<td style="text-align:center">✔</td>
+<td style="text-align:center">✔</td>
+<td style="text-align:center">✖</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="text-nowrap"><i class="fa fa-id-card fa-fw"></i> <strong>Limited</strong></span></td>
+<td style="text-align:center">✔</td>
+<td style="text-align:center">✔</td>
+<td style="text-align:center">✔</td>
+<td style="text-align:center">✖</td>
+<td style="text-align:center">✖</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="text-nowrap"><i class="fa fa-lock fa-fw"></i> <strong>Locked</strong></span></td>
+<td style="text-align:center">✔</td>
+<td style="text-align:center">✔</td>
+<td style="text-align:center">✖</td>
+<td style="text-align:center">✔</td>
+<td style="text-align:center">✖</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="text-nowrap"><i class="fa fa-umbrella fa-fw"></i> <strong>Protected</strong></span></td>
+<td style="text-align:center">✔</td>
+<td style="text-align:center">✔</td>
+<td style="text-align:center">✖</td>
+<td style="text-align:center">✖</td>
+<td style="text-align:center">✖</td>
+</tr>
+<tr>
+<td style="text-align:left"><span class="text-nowrap"><i class="fa fa-hand-stop-o fa-fw"></i> <strong>Private</strong></span></td>
+<td style="text-align:center">✔</td>
+<td style="text-align:center">✖</td>
+<td style="text-align:center">✖</td>
+<td style="text-align:center">✖</td>
+<td style="text-align:center">✖</td>
+</tr>
+</tbody>
+</table>
+<p><strong>只有筆記的擁有者可以更改權限</strong></p>
+<h2 id="嵌入"><a class="header-anchor" href="#嵌入"></a>嵌入</h2>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;100%&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;500&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://hackmd.io/features&quot;</span> <span class="hljs-attr">frameborder</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span></code></pre>
+<h2 id="簡報模式"><a class="header-anchor" href="#簡報模式"></a><a href="/slide-example">簡報模式</a></h2>
+<p>您可以使用一些語法將您的筆記分成投影片<br>
+然後用 <strong>簡報模式</strong> <i class="fa fa-tv"></i> 來展示，詳細請至上連結</p>
+<h2 id="書籍模式"><a class="header-anchor" href="#書籍模式"></a><a href="/book-example">書籍模式</a></h2>
+<p>您可以將您的筆記彙整成一本書<br>
+請將您的筆記連結列成清單<br>
+然後用 <strong>書籍模式</strong> <i class="fa fa-book"></i> 來展示，詳細請至上連結</p>
+<h1 id="檢視"><a class="header-anchor" href="#檢視"></a>檢視</h1>
+<h2 id="目錄"><a class="header-anchor" href="#目錄"></a>目錄</h2>
+<p>在右下角有個目錄的小按鈕 <i class="fa fa-bars"></i><br>
+按下它會顯示目前的目錄，而且會標明你所在的區塊<br>
+支援到<strong>第三階段的標頭</strong></p>
+<h2 id="永久連結"><a class="header-anchor" href="#永久連結"></a>永久連結</h2>
+<p>每個標頭都會在右側自動加上永久連結<br>
+您可以在滑到上面並且按 <i class="fa fa-chain"></i> 去移到那個錨點</p>
+<h1 id="編輯"><a class="header-anchor" href="#編輯"></a>編輯</h1>
+<h2 id="快速鍵"><a class="header-anchor" href="#快速鍵"></a>快速鍵</h2>
+<p>跟又快又方便的Sublime text很像</p>
+<blockquote>
+<p>更多訊息請至 <a target="_blank" rel="noopener" href="https://codemirror.net/demo/sublime.html">這裡</a></p>
+</blockquote>
+<h2 id="自動完成"><a class="header-anchor" href="#自動完成"></a>自動完成</h2>
+<p>提供完整的 Markdown 自動完成與提示</p>
+<ul>
+<li>表情符號：輸入 <code>:</code> 顯示提示</li>
+</ul>
+<div class="danger">
+<p>(這一段顯示錯誤)</p>
+<ul>
+<li>程式碼區塊：輸入 加上一個字元 顯示提示</li>
+</ul>
+</div>
+<ul>
+<li>標頭：輸入 <code>#</code> 顯示提示</li>
+<li>參考：輸入 <code>[]</code> 顯示提示</li>
+<li>外部：輸入 <code>&#123;&#125;</code> 顯示提示</li>
+<li>圖片：輸入 <code>!</code> 顯示提示</li>
+</ul>
+<h2 id="標題"><a class="header-anchor" href="#標題"></a>標題</h2>
+<p>會使用 <strong>第一個第一級標頭</strong> 作為筆記標題</p>
+<h2 id="標籤"><a class="header-anchor" href="#標籤"></a>標籤</h2>
+<p>如同以下方式來使用標籤，它們會顯示在您的 <strong>歷史紀錄</strong></p>
+<h6 id="tags-功能-酷-更新"><a class="header-anchor" href="#tags-功能-酷-更新"></a>tags: <code>功能</code> <code>酷</code> <code>更新</code></h6>
+<h2 id="YAML-metadata"><a class="header-anchor" href="#YAML-metadata"></a><a href="/yaml-metadata">YAML metadata</a></h2>
+<p>提供描述筆記的資訊，以進階設定瀏覽行為，詳細請至上連結</p>
+<ul>
+<li>robots: 設定網路機器人 meta</li>
+<li>lang: 設定瀏覽器顯示語言</li>
+<li>dir: 設定文字方向</li>
+<li>breaks: 設定是否使用分行</li>
+<li>GA: 設定 Google Analytics</li>
+<li>disqus: 設定 Disqus</li>
+<li>slideOptions: 設定簡報模式的選項</li>
+</ul>
+<h2 id="ToC"><a class="header-anchor" href="#ToC"></a>ToC:</h2>
+<p>請使用此語法 <code>[TOC]</code> 將目錄嵌入到您的筆記之中</p>
+<p>[TOC]</p>
+<h2 id="表情符號"><a class="header-anchor" href="#表情符號"></a>表情符號</h2>
+<p>您可以像是這樣使用表情符號 😄 😃 😢 😉</p>
+<blockquote>
+<p>完整的表情符號列表 <a target="_blank" rel="noopener" href="http://www.emoji-cheat-sheet.com/">在這裡</a></p>
+</blockquote>
+<h2 id="待辦清單"><a class="header-anchor" href="#待辦清單"></a>待辦清單</h2>
+<ul>
+<li><input type="checkbox" id="checkbox0"><label for="checkbox0">待辦</label>
+<ul>
+<li><input type="checkbox" id="checkbox1" checked="true"><label for="checkbox1">買些沙拉</label></li>
+<li><input type="checkbox" id="checkbox2" checked="true"><label for="checkbox2">刷牙</label></li>
+<li><input type="checkbox" id="checkbox3"><label for="checkbox3">喝水</label></li>
+</ul>
+</li>
+</ul>
+<h2 id="程式碼區塊"><a class="header-anchor" href="#程式碼區塊"></a>程式碼區塊</h2>
+<p>我們支援非常多程式語言，使用自動完成來看看有些什麼</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> s = <span class="hljs-string">&quot;JavaScript syntax highlighting&quot;</span>;<br><span class="hljs-title function_">alert</span>(s);<br><span class="hljs-keyword">function</span> <span class="hljs-title function_">$initHighlight</span>(<span class="hljs-params">block, cls</span>) &#123;<br>  <span class="hljs-keyword">try</span> &#123;<br>    <span class="hljs-keyword">if</span> (cls.<span class="hljs-title function_">search</span>(<span class="hljs-regexp">/\bno\-highlight\b/</span>) != -<span class="hljs-number">1</span>)<br>      <span class="hljs-keyword">return</span> <span class="hljs-title function_">process</span>(block, <span class="hljs-literal">true</span>, <span class="hljs-number">0x0F</span>) + <br>             <span class="hljs-string">&#x27; class=&quot;&quot;&#x27;</span>;<br>  &#125; <span class="hljs-keyword">catch</span> (e) &#123;<br>    <span class="hljs-comment">/* handle exception */</span><br>  &#125;<br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span> / <span class="hljs-number">2</span>; i &lt; classes.<span class="hljs-property">length</span>; i++) &#123;<br>    <span class="hljs-keyword">if</span> (<span class="hljs-title function_">checkCondition</span>(classes[i]) === <span class="hljs-literal">undefined</span>)<br>      <span class="hljs-keyword">return</span> <span class="hljs-regexp">/\d+[\s/]/g</span>;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>如果想要 <strong>行號</strong>，在表明程式語言之後輸入 <code>=</code><br>
+您也可以指定開始行號，如下所示，行號從101開始</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> s = <span class="hljs-string">&quot;JavaScript syntax highlighting&quot;</span>;<br><span class="hljs-title function_">alert</span>(s);<br><span class="hljs-keyword">function</span> <span class="hljs-title function_">$initHighlight</span>(<span class="hljs-params">block, cls</span>) &#123;<br>  <span class="hljs-keyword">try</span> &#123;<br>    <span class="hljs-keyword">if</span> (cls.<span class="hljs-title function_">search</span>(<span class="hljs-regexp">/\bno\-highlight\b/</span>) != -<span class="hljs-number">1</span>)<br>      <span class="hljs-keyword">return</span> <span class="hljs-title function_">process</span>(block, <span class="hljs-literal">true</span>, <span class="hljs-number">0x0F</span>) + <br>             <span class="hljs-string">&#x27; class=&quot;&quot;&#x27;</span>;<br>  &#125; <span class="hljs-keyword">catch</span> (e) &#123;<br>    <span class="hljs-comment">/* handle exception */</span><br>  &#125;<br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span> / <span class="hljs-number">2</span>; i &lt; classes.<span class="hljs-property">length</span>; i++) &#123;<br>    <span class="hljs-keyword">if</span> (<span class="hljs-title function_">checkCondition</span>(classes[i]) === <span class="hljs-literal">undefined</span>)<br>      <span class="hljs-keyword">return</span> <span class="hljs-regexp">/\d+[\s/]/g</span>;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<div class="danger">
+<p>(這段 Hexo 還沒實作)</p>
+<blockquote>
+<p>或是可以接續上一個程式碼區塊的行號，使用 <code>=+</code></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> s = <span class="hljs-string">&quot;JavaScript syntax highlighting&quot;</span>;<br><span class="hljs-title function_">alert</span>(s);<br></code></pre></td></tr></table></figure>
+</div>
+<div class="danger">
+<p>(這段語法不吃)</p>
+<h2 id="引用區塊標籤"><a class="header-anchor" href="#引用區塊標籤"></a>引用區塊標籤</h2>
+<blockquote>
+<p>您可以使用以下語法，表明自己的 <strong>姓名、時間與顏色</strong> 並與其他的引用區塊做區別<br>
+[name=ChengHan Wu] [time=Sun, Jun 28, 2015 9:59 PM] [color=#907bf7]</p>
+<blockquote>
+<p>也支援巢狀引用區塊喔！<br>
+[name=ChengHan Wu] [time=Sun, Jun 28, 2015 10:00 PM] [color=red]</p>
+</blockquote>
+</blockquote>
+</div>
+<h2 id="外部"><a class="header-anchor" href="#外部"></a>外部</h2>
+<h3 id="Youtube"><a class="header-anchor" href="#Youtube"></a>Youtube</h3>
+<div class="video-container"><iframe src="https://www.youtube.com/embed/1G4isv_Fylg" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
+<h3 id="Vimeo"><a class="header-anchor" href="#Vimeo"></a>Vimeo</h3>
+<div class="video-container"><iframe src="https://player.vimeo.com/video/124148255" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
+<h3 id="Gist"><a class="header-anchor" href="#Gist"></a>Gist</h3>
+<script src="//gist.github.com/schacon/4277.js"></script>
+<h4 id=""><a class="header-anchor" href="#"></a></h4>
+<div class="danger">
+<p>(這段語法不吃，改安裝 hexo-pdf 就可以支援，但目前只支援 slideshare 網站)</p>
+<h3 id="SlideShare"><a class="header-anchor" href="#SlideShare"></a>SlideShare</h3>
+<pre><code class="hljs twig"><span class="hljs-template-tag">&#123;%</span><span class="hljs-name">slideshare</span> briansolis/<span class="hljs-number">26</span>-disruptive-technology-trends-<span class="hljs-number">2016</span>-<span class="hljs-number">2018</span>-<span class="hljs-number">56796196</span> <span class="hljs-template-tag">%&#125;</span></code></pre>
+</div>
+<h4 id="-v2"><a class="header-anchor" href="#-v2"></a></h4>
+<h3 id="SlideShare-v2"><a class="header-anchor" href="#SlideShare-v2"></a>SlideShare</h3>
+
+	<iframe src="http://www.slideshare.net/slideshow/embed_code/key/8Jl0hUt2OKUOOE" style="width:100%;height:550px" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px">
+
+
+<div class="danger">
+<p>(這段語法不吃)</p>
+<h3 id="Speakerdeck"><a class="header-anchor" href="#Speakerdeck"></a>Speakerdeck</h3>
+<pre><code class="hljs mel">&#123;%speakerdeck sugarenia/xxlcss-how-to-<span class="hljs-keyword">scale</span>-css-and-keep-your-sanity %&#125;</code></pre>
+</div>
+<h3 id="PDF"><a class="header-anchor" href="#PDF"></a>PDF</h3>
+<p><strong>注意：請使用 https 的網址，否則可能會被您的瀏覽器阻擋載入</strong></p>
+
+
+	<div class="row">
+    <embed src="https://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+<h2 id="MathJax"><a class="header-anchor" href="#MathJax"></a>MathJax</h2>
+<p>您可以使用 <strong>MathJax</strong> 語法 來產生 <em>LaTeX</em> 數學表達式，如同 <a target="_blank" rel="noopener" href="http://math.stackexchange.com/">math.stackexchange.com</a>，但是開始的 <code>$</code> 後面以及結尾的 <code>$</code> 前面不能有空白：</p>
+<p>The <em>Gamma function</em> satisfying <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Γ</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>=</mo><mo>(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo>)</mo><mo>!</mo><mspace width="1em"></mspace><mi mathvariant="normal">∀</mi><mi>n</mi><mo>∈</mo><mi mathvariant="double-struck">N</mi></mrow><annotation encoding="application/x-tex">\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">Γ</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span><span class="mrel">=</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mbin">−</span><span class="mord mathrm">1</span><span class="mclose">)</span><span class="mclose">!</span><span class="mord mspace quad"></span><span class="mord mathrm">∀</span><span class="mord mathit">n</span><span class="mrel">∈</span><span class="mord mathbb">N</span></span></span></span> is via the Euler integral</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>=</mo><mrow><mfrac><mrow><mo>−</mo><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac></mrow><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">x = {-b \pm \sqrt{b^2-4ac} \over 2a}.
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.590389em;"></span><span class="strut bottom" style="height:2.276389em;vertical-align:-0.686em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit">x</span><span class="mrel">=</span><span class="mord displaystyle textstyle uncramped"><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.686em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="reset-textstyle textstyle cramped"><span class="mord textstyle cramped"><span class="mord mathrm">2</span><span class="mord mathit">a</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.677em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="reset-textstyle textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord">−</span><span class="mord mathit">b</span><span class="mbin">±</span><span class="sqrt mord"><span class="sqrt-sign" style="top:-0.07338899999999993em;"><span class="style-wrap reset-textstyle textstyle uncramped">√</span></span><span class="vlist"><span style="top:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="mord textstyle cramped"><span class="mord"><span class="mord mathit">b</span><span class="vlist"><span style="top:-0.289em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mbin">−</span><span class="mord mathrm">4</span><span class="mord mathit">a</span><span class="mord mathit">c</span></span></span><span style="top:-0.8333889999999999em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="reset-textstyle textstyle uncramped sqrt-line"></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span>​</span></span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span>​</span></span></span><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span></span><span class="mord mathrm">.</span></span></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Γ</mi><mo>(</mo><mi>z</mi><mo>)</mo><mo>=</mo><msubsup><mo>∫</mo><mn>0</mn><mi mathvariant="normal">∞</mi></msubsup><msup><mi>t</mi><mrow><mi>z</mi><mo>−</mo><mn>1</mn></mrow></msup><msup><mi>e</mi><mrow><mo>−</mo><mi>t</mi></mrow></msup><mi>d</mi><mi>t</mi><mspace width="0.16667em"></mspace><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.36em;"></span><span class="strut bottom" style="height:2.27225em;vertical-align:-0.91225em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathrm">Γ</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.04398em;">z</span><span class="mclose">)</span><span class="mrel">=</span><span class="mop"><span class="op-symbol large-op mop" style="margin-right:0.44445em;top:-0.0011249999999999316em;">∫</span><span class="vlist"><span style="top:0.91225em;margin-left:-0.44445em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">0</span></span></span><span style="top:-0.9739999999999999em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">∞</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord"><span class="mord mathit">t</span><span class="vlist"><span style="top:-0.41300000000000003em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord mathit" style="margin-right:0.04398em;">z</span><span class="mbin">−</span><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord"><span class="mord mathit">e</span><span class="vlist"><span style="top:-0.41300000000000003em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord">−</span><span class="mord mathit">t</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord mathit">d</span><span class="mord mathit">t</span><span class="mord mspace thinspace"></span><span class="mord mathrm">.</span></span></span></span></span></p>
+<blockquote>
+<p>更多關於 <strong>LaTeX</strong> 數學表達式 <a target="_blank" rel="noopener" href="http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference">請至這裡</a></p>
+</blockquote>
+<h2 id="UML-圖表"><a class="header-anchor" href="#UML-圖表"></a>UML 圖表</h2>
+<h3 id="循序圖"><a class="header-anchor" href="#循序圖"></a>循序圖</h3>
+<p>您可以像是以下使用循序圖：</p>
+<div id="sequence-0"></div>
+<h3 id="流程圖"><a class="header-anchor" href="#流程圖"></a>流程圖</h3>
+<p>您可以像是以下使用流程圖：</p>
+<div id="flowchart-0" class="flow-chart"></div>
+---
+:::danger
+(這段語法不吃)
+<h3 id="Graphviz"><a class="header-anchor" href="#Graphviz"></a>Graphviz</h3>
+<pre><code class="hljs graphviz">digraph hierarchy &#123;
+
+                nodesep=1.0 // increases the separation between nodes
+                
+                node [color=Red,fontname=Courier,shape=box] //All nodes will this shape and colour
+                edge [color=Blue, style=dashed] //All the lines look like this
+
+                Headteacher-&gt;&#123;Deputy1 Deputy2 BusinessManager&#125;
+                Deputy1-&gt;&#123;Teacher1 Teacher2&#125;
+                BusinessManager-&gt;ITManager
+                &#123;rank=same;ITManager Teacher1 Teacher2&#125;  // Put them on the same level
+&#125;</code></pre>
+<h3 id="Mermaid"><a class="header-anchor" href="#Mermaid"></a>Mermaid</h3>
+<pre><code class="hljs mermaid">gantt
+    title A Gantt Diagram
+
+    section Section
+    A task           :a1, 2014-01-01, 30d
+    Another task     :after a1  , 20d
+    section Another
+    Task in sec      :2014-01-12  , 12d
+    anther task      : 24d</code></pre>
+<h3 id="Abc"><a class="header-anchor" href="#Abc"></a>Abc</h3>
+<pre><code class="hljs abc">X:1
+T:Speed the Plough
+M:4/4
+C:Trad.
+K:G
+|:GABc dedB|dedB dedB|c2ec B2dB|c2A2 A2BA|
+GABc dedB|dedB dedB|c2ec B2dB|A2F2 G4:|
+|:g2gf gdBd|g2f2 e2d2|c2ec B2dB|c2A2 A2df|
+g2gf g2Bd|g2f2 e2d2|c2ec B2dB|A2F2 G4:|</code></pre>
+<blockquote>
+<p>更多關於 <strong>循序圖</strong> 語法 <a target="_blank" rel="noopener" href="http://bramp.github.io/js-sequence-diagrams/">在這裡</a>.<br>
+更多關於 <strong>流程圖</strong> 語法 <a target="_blank" rel="noopener" href="http://adrai.github.io/flowchart.js/">在這裡</a>.<br>
+更多關於 <strong>graphviz</strong> 語法 <a target="_blank" rel="noopener" href="http://www.tonyballantyne.com/graphs.html">在這裡</a><br>
+更多關於 <strong>mermaid</strong> 語法 <a target="_blank" rel="noopener" href="http://knsv.github.io/mermaid">在這裡</a><br>
+更多關於 <strong>abc</strong> 語法 <a target="_blank" rel="noopener" href="http://abcnotation.com/learn">在這裡</a></p>
+</blockquote>
+<p>:::</p>
+<h2 id="警告區塊"><a class="header-anchor" href="#警告區塊"></a>警告區塊</h2>
+<div class="success">
+<p>耶 🎉</p>
+</div>
+<div class="info">
+<p>這是訊息 📣</p>
+</div>
+<div class="warning">
+<p>注意 ⚡</p>
+</div>
+<div class="danger">
+<p>喔不 🔥</p>
+</div>
+<h2 id="排版"><a class="header-anchor" href="#排版"></a>排版</h2>
+<h3 id="標頭"><a class="header-anchor" href="#標頭"></a>標頭</h3>
+<pre><code class="hljs clean"># h1 標頭
+## h2 標頭
+### h3 標頭
+#### h4 標頭
+##### h5 標頭
+###### h6 標頭</code></pre>
+<h3 id="水平分隔線"><a class="header-anchor" href="#水平分隔線"></a>水平分隔線</h3>
+<hr>
+<hr>
+<hr>
+<h3 id="字形替換"><a class="header-anchor" href="#字形替換"></a>字形替換</h3>
+<p>© © ® ® ™ ™ (p) (P) ±</p>
+<p>測試… 測試… 測試… 測試?.. 測試!..</p>
+<p>!!! ??? ,</p>
+<p>Remarkable – awesome</p>
+<p>“Smartypants, 雙引號”</p>
+<p>‘Smartypants, 單引號’</p>
+<h3 id="強調"><a class="header-anchor" href="#強調"></a>強調</h3>
+<p><strong>這是粗體文字</strong></p>
+<p><strong>這是粗體文字</strong></p>
+<p><em>這是斜體文字</em></p>
+<p><em>這是斜體文字</em></p>
+<p><s>這是刪除文字</s></p>
+<p>上標： 19<sup>th</sup></p>
+<p>下標： H<sub>2</sub>O</p>
+<p><ins>這是底線文字</ins></p>
+<p><mark>這是標記文字</mark></p>
+<h3 id="引用區塊"><a class="header-anchor" href="#引用區塊"></a>引用區塊</h3>
+<blockquote>
+<p>引用區塊也可以是巢狀的喔…</p>
+<blockquote>
+<p>…可以多層次的使用…</p>
+<blockquote>
+<p>…或是用空白隔開</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="清單"><a class="header-anchor" href="#清單"></a>清單</h3>
+<h4 id="項目"><a class="header-anchor" href="#項目"></a>項目</h4>
+<ul>
+<li>在行開頭使用 <code>+</code> <code>-</code> 或是 <code>*</code> 來建立清單</li>
+<li>空兩個空白就可以產生子清單
+<ul>
+<li>當清單標記使用的字元不同，會強制建立新的清單
+<ul>
+<li>Ac tristique libero volutpat at</li>
+</ul>
+<ul>
+<li>Facilisis in pretium nisl aliquet</li>
+</ul>
+<ul>
+<li>Nulla volutpat aliquam velit</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>非常簡單！</li>
+</ul>
+<h4 id="編號"><a class="header-anchor" href="#編號"></a>編號</h4>
+<ol>
+<li>
+<p>Lorem ipsum dolor sit amet</p>
+</li>
+<li>
+<p>Consectetur adipiscing elit</p>
+</li>
+<li>
+<p>Integer molestie lorem at massa</p>
+</li>
+<li>
+<p>您可以逐次增加項目數字…</p>
+</li>
+<li>
+<p>…或是全部都使用 <code>1.</code></p>
+</li>
+<li>
+<p>feafw</p>
+</li>
+<li>
+<p>332</p>
+</li>
+<li>
+<p>242</p>
+</li>
+<li>
+<p>2552</p>
+</li>
+<li>
+<p>e2</p>
+</li>
+</ol>
+<p>從其他範圍開始編號清單</p>
+<ol start="57">
+<li>foo</li>
+<li>bar</li>
+</ol>
+<h3 id="程式碼"><a class="header-anchor" href="#程式碼"></a>程式碼</h3>
+<p>行內 <code>程式碼</code></p>
+<p>縮排程式碼</p>
+<pre><code class="hljs">// Some comments
+line 1 of code
+line 2 of code
+line 3 of code
+</code></pre>
+<p>程式碼區塊</p>
+<pre><code class="hljs gams"><span class="hljs-function"><span class="hljs-title">Sample</span></span> text here...</code></pre>
+<p>語法標色</p>
+<pre><code class="hljs javascript"><span class="hljs-keyword">var</span> foo = <span class="hljs-keyword">function</span> (<span class="hljs-params">bar</span>) &#123;
+  <span class="hljs-keyword">return</span> bar++;
+&#125;;
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">foo</span>(<span class="hljs-number">5</span>));</code></pre>
+<h3 id="表格"><a class="header-anchor" href="#表格"></a>表格</h3>
+<table>
+<thead>
+<tr>
+<th>選項</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>data</td>
+<td>path to data files to supply the data that will be passed into templates.</td>
+</tr>
+<tr>
+<td>engine</td>
+<td>engine to be used for processing templates. Handlebars is the default.</td>
+</tr>
+<tr>
+<td>ext</td>
+<td>extension to be used for dest files.</td>
+</tr>
+</tbody>
+</table>
+<p>向右對齊</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">選項</th>
+<th style="text-align:right">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">data</td>
+<td style="text-align:right">path to data files to supply the data that will be passed into templates.</td>
+</tr>
+<tr>
+<td style="text-align:right">engine</td>
+<td style="text-align:right">engine to be used for processing templates. Handlebars is the default.</td>
+</tr>
+<tr>
+<td style="text-align:right">ext</td>
+<td style="text-align:right">extension to be used for dest files.</td>
+</tr>
+</tbody>
+</table>
+<p>向左對齊</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">選項</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">path to data files to supply the data that will be passed into templates.</td>
+</tr>
+<tr>
+<td style="text-align:left">engine</td>
+<td style="text-align:left">engine to be used for processing templates. Handlebars is the default.</td>
+</tr>
+<tr>
+<td style="text-align:left">ext</td>
+<td style="text-align:left">extension to be used for dest files.</td>
+</tr>
+</tbody>
+</table>
+<p>置中對齊</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">選項</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">data</td>
+<td style="text-align:center">path to data files to supply the data that will be passed into templates.</td>
+</tr>
+<tr>
+<td style="text-align:center">engine</td>
+<td style="text-align:center">engine to be used for processing templates. Handlebars is the default.</td>
+</tr>
+<tr>
+<td style="text-align:center">ext</td>
+<td style="text-align:center">extension to be used for dest files.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="連結"><a class="header-anchor" href="#連結"></a>連結</h3>
+<p><a target="_blank" rel="noopener" href="http://dev.nodeca.com">連結文字</a><br>
+<a target="_blank" rel="noopener" href="http://nodeca.github.io/pica/demo/" title="標題文字！">加上標題的連結文字</a><br>
+自動轉換連結 <a target="_blank" rel="noopener" href="https://github.com/nodeca/pica">https://github.com/nodeca/pica</a></p>
+<h3 id="圖片"><a class="header-anchor" href="#圖片"></a>圖片</h3>
+<p><img src="https://octodex.github.com/images/minion.png" srcset="/img/loading.gif" lazyload alt="Minion"><br>
+<img src="https://octodex.github.com/images/stormtroopocat.jpg" srcset="/img/loading.gif" lazyload alt="Stormtroopocat" title="The Stormtroopocat"><br>
+如同連結一般，圖片也可以用註腳語法<br>
+<img src="https://octodex.github.com/images/dojocat.jpg" srcset="/img/loading.gif" lazyload alt="Alt text" title="The Dojocat"><br>
+使用參考，可以在稍後的文件中再定義圖片網址</p>
+<p><img src="https://octodex.github.com/images/minion.png" srcset="/img/loading.gif" lazyload alt="Minion" width="200" height="200"><br>
+使用指定的大小顯示圖片</p>
+<h3 id="註腳"><a class="header-anchor" href="#註腳"></a>註腳</h3>
+<p>註腳 1 連結<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.<br>
+註腳 2 連結<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>.<br>
+行內註腳<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> 定義<br>
+重複的註腳參考<sup class="footnote-ref"><a href="#fn2" id="fnref2:1">[2:1]</a></sup>.</p>
+<h3 id="定義清單"><a class="header-anchor" href="#定義清單"></a>定義清單</h3>
+<dl>
+<dt>名詞 1</dt>
+<dd>
+<p>定義 1 快速連續項目</p>
+</dd>
+<dt>名詞 2 加上 <em>行內標記</em></dt>
+<dd>
+<p>定義 2</p>
+<pre><code class="hljs">  &#123; 這些程式碼屬於 定義 2 的一部分 &#125;
+</code></pre>
+<p>定義 2 的第三段落</p>
+</dd>
+</dl>
+<p><em>緊密樣式：</em></p>
+<dl>
+<dt>名詞 1</dt>
+<dd>定義 1</dd>
+<dt>名詞 2</dt>
+<dd>定義 2a</dd>
+<dd>定義 2b</dd>
+</dl>
+<h3 id="縮寫"><a class="header-anchor" href="#縮寫"></a>縮寫</h3>
+<p>這是 <abbr title="Hyper Text Markup Language">HTML</abbr> 的縮寫範例<br>
+它會轉換 “<abbr title="Hyper Text Markup Language">HTML</abbr>”，但是縮寫旁邊其他的部分，例如：“xxxHTMLyyy”，不受影響</p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">st=>start: 開始
+e=>end: 結束
+op=>operation: 我的操作
+op2=>operation: 啦啦啦
+cond=>condition: 是或否？
+
+st->op->op2->cond
+cond(yes)->e
+cond(no)->op2</textarea><textarea id="flowchart-0-options" style="display: none">{"theme":"simple","scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script><script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.27/webfontloader.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script><textarea id="sequence-0-code" style="display: none">艾莉絲->包柏: 哈摟，你好嗎？
+Note right of 包柏: 包柏思考中
+包柏-->艾莉絲: 我很好，謝謝！
+Note left of 艾莉絲: 艾莉絲回應
+艾莉絲->包柏: 最近過得怎樣？</textarea><textarea id="sequence-0-options" style="display: none">{"theme":"simple","scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("sequence-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("sequence-0-options").value));  var diagram = Diagram.parse(code);  diagram.drawSVG("sequence-0", options);</script><hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>註腳 <strong>也可以標記</strong><br>
+還可以有很多段落 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>註腳 文字 <a href="#fnref2" class="footnote-backref">↩︎</a> <a href="#fnref2:1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>行內註腳的文字 <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Hexo/" class="category-chain-item">Hexo</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Hexo/">#Hexo</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>測試 hackmd 功能</div>
+      <div>https://soj0825.github.io/2019/01/14/HackMD-test/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>SoJ</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>發布於</div>
+          <div>2019年1月14日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>許可協議</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2019/01/14/Hexo-Setting/" title="讓 Hexo 支援 markdown 語法">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">讓 Hexo 支援 markdown 語法</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"aeb5c7daae399811e018","clientSecret":"2fbed144bbe10d24434da2becc2b4e6cdde0d7b0","repo":"soj0825.github.io","owner":"SoJ0825","admin":["SoJ0825"],"language":"zh-TW","labels":["blog"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: 'eb9fe2d7b835bd37e86f560bf00698ee'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目錄</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜尋</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">關鍵字</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允許 JavaScript 運行的環境下瀏覽效果更佳</div>
+  </noscript>
+</body>
+</html>

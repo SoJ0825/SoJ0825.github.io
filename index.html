@@ -1,0 +1,851 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-TW" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="SoJ">
+  <meta name="keywords" content="Laravel, MySQL, PHP, SoJ, SoJ&#39;s Blog, SoJ 的學習筆記">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css"/>
+
+  
+    <meta property="og:type" content="website">
+<meta property="og:title" content="SoJ 的學習筆記">
+<meta property="og:url" content="https://soj0825.github.io/index.html">
+<meta property="og:site_name" content="SoJ 的學習筆記">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:author" content="SoJ">
+<meta property="article:tag" content="Laravel, MySQL, PHP, SoJ, SoJ&#39;s Blog, SoJ 的學習筆記">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>SoJ 的學習筆記</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"soj0825.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":"G-44G98SVV8E","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+    <!-- Google gtag.js -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('https://www.googletagmanager.com/gtag/js?id=G-44G98SVV8E', function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-44G98SVV8E');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>SoJ 的學習筆記</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首頁</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>歸檔</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分類</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>標籤</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>關於</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/banner.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="半導體工程師轉職軟體工程師的新手筆記"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          style="margin-top: 0">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2023/03/27/goodideas-backend-camp-11th/" target="_self">
+          <img src="/img/goodideas.png" srcset="/img/loading.gif" lazyload alt="好想工作室 Backend Camp 第 11 梯招生">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/03/27/goodideas-backend-camp-11th/" target="_self">
+          好想工作室 Backend Camp 第 11 梯招生
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2023/03/27/goodideas-backend-camp-11th/" target="_self">
+        <div>
+          AI 招生文： 親愛的朋友， 您是否也因為對軟體工程師這份職業的熱愛而來到這裡？您是否也因為想成為優秀的後端工程師而不斷學習，卻苦無良師益友而無所適從？ 如果您想要一個互相學習、自主學習的學習平台，那麼好想工作室絕對是您的最佳選擇。我們不同於傳統的教學方式，而是以自主學習和互相學習為主，讓學員們掌握學習方式，養成正確的學習觀念，以持續成長為目標。 在好想工作室，我們提供前端(Web camp)、
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-03-27 09:50" pubdate>
+              2023-03-27
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8B%9B%E7%94%9F/" class="category-chain-item">招生</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%A5%BD%E6%83%B3%E5%B7%A5%E4%BD%9C%E5%AE%A4/">#好想工作室</a>
+            
+              <a href="/tags/%E6%8B%9B%E5%8B%9F/">#招募</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/08/08/goodideas-backend-camp-10th/" target="_self">
+          <img src="/img/goodideas.png" srcset="/img/loading.gif" lazyload alt="好想工作室 Backend Camp 第 10 梯招生(已截止)">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/08/08/goodideas-backend-camp-10th/" target="_self">
+          好想工作室 Backend Camp 第 10 梯招生(已截止)
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2022/08/08/goodideas-backend-camp-10th/" target="_self">
+        <div>
+          簡介： 大家好，我是好想工作室的 backend camp mentor 菘駿，身為一個軟體工程師，當然也要有一個英文代號：SoJ，這沒啥意思，只是純粹發音接近菘駿而已。 因爲疫情發燒及女兒的出世，爲了照顧女兒，我選擇 WFH 了一陣子，隨著女兒兩歲以及防疫政策的改轉，我選擇讓想小朋友提早進入幼兒園，而我也能重返好想工作室內工作。 好想工作室(以下簡稱「好想」)是一個以資訊科技為主題 co-wo
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-08-08 10:11" pubdate>
+              2022-08-08
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8B%9B%E7%94%9F/" class="category-chain-item">招生</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%A5%BD%E6%83%B3%E5%B7%A5%E4%BD%9C%E5%AE%A4/">#好想工作室</a>
+            
+              <a href="/tags/%E6%8B%9B%E5%8B%9F/">#招募</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2021/04/06/goodideas-backend-camp-9th/" target="_self">
+          <img src="/img/goodideas.png" srcset="/img/loading.gif" lazyload alt="好想工作室 Backend Camp 第 9 梯招生(已截止)">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/04/06/goodideas-backend-camp-9th/" target="_self">
+          好想工作室 Backend Camp 第 9 梯招生(已截止)
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2021/04/06/goodideas-backend-camp-9th/" target="_self">
+        <div>
+          前言： 2020 年是個糟糕的一年，生活深受了新冠病毒疫情衝擊不說，出國旅遊泡湯，公司停工、倒閉的也不少(雖然臺灣影響相對少)。 最壞的情況，還沒有過去，我們將面臨比起過往全球金融風暴的情況，更前所未有的困難，世界很亂，我們無法獨善其身。 疫情還沒完全解除，卻已推動資訊科技領域相關的數字，遠距工作機會、線上教學增加，App下載量增加，我們可以預見，未來將會是資訊領域的一片天。 簡介： 大家好，我
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-04-06 11:00" pubdate>
+              2021-04-06
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8B%9B%E7%94%9F/" class="category-chain-item">招生</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%A5%BD%E6%83%B3%E5%B7%A5%E4%BD%9C%E5%AE%A4/">#好想工作室</a>
+            
+              <a href="/tags/%E6%8B%9B%E5%8B%9F/">#招募</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2020/06/02/goodideas-backend-camp-7th/" target="_self">
+          <img src="/img/goodideas.png" srcset="/img/loading.gif" lazyload alt="好想工作室 Backend Camp 第 7 梯招生(已截止)">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/06/02/goodideas-backend-camp-7th/" target="_self">
+          好想工作室 Backend Camp 第 7 梯招生(已截止)
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2020/06/02/goodideas-backend-camp-7th/" target="_self">
+        <div>
+          前言： 我們身處在一個網路發達、人手一機的資訊大爆炸年代，AI、VR、大數據…這些詞充斥著我們的生活，越來越多人想投入資訊圈，雖然網路上資源很多，但很多學習者都會在這裡卡關：  免費的網路資源:網路上很多寫好的心得文, blog，這些內容大多只有片段、雜亂無章，每次學習只會延伸更多的問題，也無法釐清這些內容是否過時、是否正確。 付費的線上學習平台:或許講者已經整理好教材，但是學習過程大部分都是跟
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-06-02 10:48" pubdate>
+              2020-06-02
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8B%9B%E7%94%9F/" class="category-chain-item">招生</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%A5%BD%E6%83%B3%E5%B7%A5%E4%BD%9C%E5%AE%A4/">#好想工作室</a>
+            
+              <a href="/tags/%E6%8B%9B%E5%8B%9F/">#招募</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2020/02/20/goodideas-6th-backend-camps/" target="_self">
+          <img src="/img/goodideas.png" srcset="/img/loading.gif" lazyload alt="好想工作室 Backend Camp 第 6 梯招生(已截止)">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/02/20/goodideas-6th-backend-camps/" target="_self">
+          好想工作室 Backend Camp 第 6 梯招生(已截止)
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2020/02/20/goodideas-6th-backend-camps/" target="_self">
+        <div>
+          大家好 我是好想工作室的 Backend Camp Mentor - 高菘駿 相信大家最近從新聞裡聽到「口罩地圖」、「工程師鍵盤救國」、「3天讓大家用健保卡記名買口罩」…。 我很驕傲的說這個「口罩地圖」的製作人就是好想工作室的創辦人 Howard，身為工作室一員的我也深感榮耀。  ETtoday新聞雲 報導  我們身處在一個網路發達、人手一機的資訊大爆炸年代，軟體工程師確實可以靠鍵盤救國了。 但可
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-02-20 22:55" pubdate>
+              2020-02-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8B%9B%E7%94%9F/" class="category-chain-item">招生</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%A5%BD%E6%83%B3%E5%B7%A5%E4%BD%9C%E5%AE%A4/">#好想工作室</a>
+            
+              <a href="/tags/%E6%8B%9B%E5%8B%9F/">#招募</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2019/01/14/Hexo-Setting/" target="_self">
+          <img src="/img/markdown.jpg" srcset="/img/loading.gif" lazyload alt="讓 Hexo 支援 markdown 語法">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2019/01/14/Hexo-Setting/" target="_self">
+          讓 Hexo 支援 markdown 語法
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2019/01/14/Hexo-Setting/" target="_self">
+        <div>
+          Hexo 設置 首先我要先謝謝 好想工作室 的前輩 Chris大大，本文大部分都是參考他的文章，大家可以去逛逛他的筆記，很多技術相關的文章可以參考。  Chris 筆記 - Hexo 研究筆記 1  預先安裝  NodeJS =&gt; 會順便安裝 npm 套件管理系統  brew install node  Hexo 主程式 =&gt; 透過 npm 安裝  npm install hexo-c
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-01-14 00:00" pubdate>
+              2019-01-14
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Hexo/" class="category-chain-item">Hexo</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Hexo/">#Hexo</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2019/01/14/HackMD-test/" target="_self">
+          <img src="/img/HackMD.svg" srcset="/img/loading.gif" lazyload alt="測試 hackmd 功能">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2019/01/14/HackMD-test/" target="_self">
+          測試 hackmd 功能
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2019/01/14/HackMD-test/" target="_self">
+        <div>
+          功能介紹 English version 中文版 日本語版 請不要修改這份筆記 非常謝謝您 😄 如果要說 嗨 或是 玩些東西，請至 遊樂場 特賣會 歡迎來自 Front-End Developers Taiwan 的各位！💯 歡迎來自 g0v 的各位！👍 歡迎來自 程式人雜誌 的各位！😃 簡介  HackMD 是個跨平台的 Markdown 即時協作筆記 所以您可以在電腦、平板甚至是手機與
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-01-14 00:00" pubdate>
+              2019-01-14
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Hexo/" class="category-chain-item">Hexo</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Hexo/">#Hexo</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜尋</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">關鍵字</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允許 JavaScript 運行的環境下瀏覽效果更佳</div>
+  </noscript>
+</body>
+</html>
