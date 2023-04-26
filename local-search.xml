@@ -4,7 +4,7 @@
   
   
   <entry>
-    <title>publicS3</title>
+    <title>透過 Laravel 上傳圖片到 AWS S3，並允許公開讀取</title>
     <link href="/20230426/7457c84.html"/>
     <url>/20230426/7457c84.html</url>
     

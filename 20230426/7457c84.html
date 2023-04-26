@@ -21,30 +21,25 @@
   
     <meta name="description" content="S3 允許公開讀取   封鎖對 Amazon S3 儲存體的公開存取權  由於 AWS S3 預設建議停用 S3 存取控制清單 (ACL），所以新建立的儲存貯體，只能透過「儲存貯體政策」去設定讀取權限。 也就是如果你新創的「儲存貯體」如果沒有啟用 ACL （已經建好的儲存貯體也沒辦法再啟用 ACL 了）， 那 laravel storePubliclyAs() 就等同於沒用  停用 ACL 的做法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="publicS3">
+<meta property="og:title" content="透過 Laravel 上傳圖片到 AWS S3，並允許公開讀取">
 <meta property="og:url" content="https://soj0825.github.io/20230426/7457c84.html">
 <meta property="og:site_name" content="SoJ 的學習筆記">
 <meta property="og:description" content="S3 允許公開讀取   封鎖對 Amazon S3 儲存體的公開存取權  由於 AWS S3 預設建議停用 S3 存取控制清單 (ACL），所以新建立的儲存貯體，只能透過「儲存貯體政策」去設定讀取權限。 也就是如果你新創的「儲存貯體」如果沒有啟用 ACL （已經建好的儲存貯體也沒辦法再啟用 ACL 了）， 那 laravel storePubliclyAs() 就等同於沒用  停用 ACL 的做法">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://i.imgur.com/oMPgEza.png">
-<meta property="og:image" content="https://i.imgur.com/L3K2jQ7.png">
-<meta property="og:image" content="https://i.imgur.com/ZvZBYmO.png">
-<meta property="og:image" content="https://i.imgur.com/QHf8MxO.png">
-<meta property="og:image" content="https://i.imgur.com/L3K2jQ7.png">
-<meta property="og:image" content="https://i.imgur.com/ZvZBYmO.png">
+<meta property="og:image" content="https://soj0825.github.io/img/uploadToS3.jpeg">
 <meta property="article:published_time" content="2023-04-26T03:37:51.000Z">
-<meta property="article:modified_time" content="2023-04-26T04:03:17.248Z">
+<meta property="article:modified_time" content="2023-04-26T04:34:17.657Z">
 <meta property="article:author" content="SoJ">
 <meta property="article:tag" content="AWS">
 <meta property="article:tag" content="Laravel">
 <meta property="article:tag" content="Storage">
 <meta property="article:tag" content="S3">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://i.imgur.com/oMPgEza.png">
+<meta name="twitter:image" content="https://soj0825.github.io/img/uploadToS3.jpeg">
   
   
   
-  <title>publicS3 - SoJ 的學習筆記</title>
+  <title>透過 Laravel 上傳圖片到 AWS S3，並允許公開讀取 - SoJ 的學習筆記</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -231,13 +226,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/banner.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/img/uploadToS3.jpeg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="publicS3"></span>
+            <span id="subtitle" data-typed-text="透過 Laravel 上傳圖片到 AWS S3，並允許公開讀取"></span>
           
         </div>
 
@@ -309,7 +304,7 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">publicS3</h1>
+            <h1 style="display: none">透過 Laravel 上傳圖片到 AWS S3，並允許公開讀取</h1>
             
             
               <div class="markdown-body">
@@ -405,7 +400,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>publicS3</div>
+      <div>透過 Laravel 上傳圖片到 AWS S3，並允許公開讀取</div>
       <div>https://soj0825.github.io/20230426/7457c84.html</div>
     </div>
     <div class="license-meta">
