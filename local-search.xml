@@ -4,6 +4,37 @@
   
   
   <entry>
+    <title>publicS3</title>
+    <link href="/20230426/7457c84.html"/>
+    <url>/20230426/7457c84.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="S3-允許公開讀取"><a class="header-anchor" href="#S3-允許公開讀取"></a>S3 允許公開讀取</h1><div class="danger"><blockquote><p><a href="https://docs.aws.amazon.com/zh_tw/AmazonS3/latest/userguide/access-control-block-public-access.html">封鎖對 Amazon S3 儲存體的公開存取權</a></p></blockquote><p>由於 AWS S3 預設建議停用 S3 存取控制清單 (ACL），所以新建立的儲存貯體，只能透過「儲存貯體政策」去設定讀取權限。</p><p>也就是如果你新創的「儲存貯體」如果沒有啟用 ACL （已經建好的儲存貯體也沒辦法再啟用 ACL 了）， 那 laravel storePubliclyAs() 就等同於沒用</p></div><h2 id="停用-ACL-的做法"><a class="header-anchor" href="#停用-ACL-的做法"></a>停用 ACL 的做法</h2><p><img src="https://i.imgur.com/oMPgEza.png" alt=""></p><ol><li><p>停用「帳戶」所有「封鎖公開存取」<br><img src="https://i.imgur.com/L3K2jQ7.png" alt=""></p></li><li><p>停用「儲存貯體」的所有「封鎖公開存取」<br><img src="https://i.imgur.com/ZvZBYmO.png" alt=""></p></li><li><p>設定「儲存貯體政策」</p></li></ol><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;Version&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2012-10-17&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;Id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Policy1680494149129&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;Statement&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>        <span class="hljs-punctuation">&#123;</span><br>            <span class="hljs-attr">&quot;Sid&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;PublicRead&quot;</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-attr">&quot;Effect&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Allow&quot;</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-attr">&quot;Principal&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;*&quot;</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-attr">&quot;Action&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;s3:GetObject&quot;</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-attr">&quot;Resource&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;arn:aws:s3:::sojtest1/*&quot;</span><br>        <span class="hljs-punctuation">&#125;</span><br>    <span class="hljs-punctuation">]</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure><ol start="4"><li>laravel 程式碼</li></ol><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-title class_">Route</span>::<span class="hljs-title function_ invoke__">post</span>(<span class="hljs-string">&#x27;upload&#x27;</span>, function (\Illuminate\Http\Request <span class="hljs-variable">$request</span>) &#123;<br>    <span class="hljs-variable">$image</span> = <span class="hljs-variable">$request</span>-&gt;<span class="hljs-title function_ invoke__">file</span>(<span class="hljs-string">&#x27;image&#x27;</span>);<br>    <span class="hljs-variable">$extensionName</span> = <span class="hljs-variable">$image</span>-&gt;<span class="hljs-title function_ invoke__">getClientOriginalExtension</span>();<br>    <span class="hljs-variable">$fileName</span> = <span class="hljs-title function_ invoke__">now</span>()-&gt;timestamp . <span class="hljs-string">&quot;.<span class="hljs-subst">$extensionName</span>&quot;</span>;<br>    <span class="hljs-keyword">return</span> <span class="hljs-variable">$image</span>-&gt;<span class="hljs-title function_ invoke__">storeAs</span>(<span class="hljs-string">&#x27;soj/test&#x27;</span>, <span class="hljs-variable">$fileName</span>);<br>&#125;);<br></code></pre></td></tr></table></figure><h2 id="啟用-ACL-的做法"><a class="header-anchor" href="#啟用-ACL-的做法"></a>啟用 ACL 的做法</h2><div class="info"><p>請先確認 ACL 是否啟用<br><img src="https://i.imgur.com/QHf8MxO.png" alt=""></p></div><ol><li>停用「帳戶」所有「封鎖公開存取」<br><img src="https://i.imgur.com/L3K2jQ7.png" alt=""></li><li>停用「儲存貯體」的所有「封鎖公開存取」<br><img src="https://i.imgur.com/ZvZBYmO.png" alt=""></li><li>不用設定「儲存貯體政策」，程式碼使用 <code>storePubliclyAs()</code> 就可以</li></ol><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-title class_">Route</span>::<span class="hljs-title function_ invoke__">post</span>(<span class="hljs-string">&#x27;upload&#x27;</span>, function (\Illuminate\Http\Request <span class="hljs-variable">$request</span>) &#123;<br>    <span class="hljs-variable">$image</span> = <span class="hljs-variable">$request</span>-&gt;<span class="hljs-title function_ invoke__">file</span>(<span class="hljs-string">&#x27;image&#x27;</span>);<br>    <span class="hljs-variable">$extensionName</span> = <span class="hljs-variable">$image</span>-&gt;<span class="hljs-title function_ invoke__">getClientOriginalExtension</span>();<br>    <span class="hljs-variable">$fileName</span> = <span class="hljs-title function_ invoke__">now</span>()-&gt;timestamp . <span class="hljs-string">&quot;.<span class="hljs-subst">$extensionName</span>&quot;</span>;<br>    <span class="hljs-keyword">return</span> <span class="hljs-variable">$image</span>-&gt;<span class="hljs-title function_ invoke__">storePubliclyAs</span>(<span class="hljs-string">&#x27;soj/test&#x27;</span>, <span class="hljs-variable">$fileName</span>);<br>&#125;);<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>學習筆記</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AWS</tag>
+      
+      <tag>Laravel</tag>
+      
+      <tag>Storage</tag>
+      
+      <tag>S3</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>好想工作室 Backend Camp 第 11 梯招生</title>
     <link href="/2023/03/27/goodideas-backend-camp-11th/"/>
     <url>/2023/03/27/goodideas-backend-camp-11th/</url>
