@@ -1,5 +1,5 @@
 ---
-title: 好想工作室 Backend Camp 第 11 梯招生
+title: 好想工作室 Backend Camp 第 11 梯招生(已截止)
 date: 2023-03-27 09:50:00
 categories:
 - 招生
